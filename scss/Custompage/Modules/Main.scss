@@ -1,0 +1,42 @@
+body {
+  font-size: 12px;
+  line-height: 18px;
+  background: url(../img/home/bg-header.png) top center repeat-x white;
+}
+
+
+header {
+  .bg-primary {
+    background-color: #0275d8!important;
+}
+  .bg-header {
+    background-color: red;
+  }
+
+  .menu-left {
+    position: absolute;
+    padding-top: .25rem;
+  }
+}
+/*Footer*/
+.footer {
+  .copy-right {
+    background-color: #421306;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+
+    .nav-item {
+      line-height: 1;
+
+      .nav-link {
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+
+      &:not(:first-child) .nav-link {
+        border-left: 1px solid #bfbfbf;
+      }
+    }
+  }
+}
+

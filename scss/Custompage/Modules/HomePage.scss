@@ -1,0 +1,40 @@
+.home-page {
+    .home-panner {
+        .container {
+            position: absolute;
+            top: 110px;
+        }
+    }
+    .home-page-content {
+        margin-top: 0px;
+        .process-box {
+            height: 220px;
+        }
+    }
+}
+.homepage{
+    height: 500px;
+}
+.tdtrong {
+	.section {
+		background-color: white;
+		margin: 1px;
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+		box-shadow: 0px 0px 10px 0px;
+		.image {
+			img {
+				width: 80px;
+				float: left;
+			}
+		}
+		.section-title {
+			color: #000;
+			font-size: 16pt;
+			font-weight: bold;
+		}
+		.description {
+			padding-top: 15px;
+		}
+	}
+}   

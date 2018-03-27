@@ -1,0 +1,338 @@
+// /*@import "Variables";*/
+
+// /*font-face*/
+// @font-face {
+//   font-family: 'Segoe UI';
+//   src: url('../fonts/segoeuil.eot');
+//   src: local("Segoe UI Light"), url('../fonts/segoeuil.eot?#iefix') format('embedded-opentype'), url('../fonts/segoeuil.woff') format('woff'), url('../fonts/segoeuil.svg#SegoeUILight') format('svg');
+//   font-weight: 300;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: 'Segoe UI';
+//   src: url('../fonts/segoeui.eot');
+//   src: local("Segoe UI"), url('../fonts/segoeui.eot?#iefix') format('embedded-opentype'), url('../fonts/segoeui.woff') format('woff'), url('../fonts/segoeui.svg#SegoeUI') format('svg');
+//   font-weight: 400;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: 'Segoe UI';
+//   src: url('../fonts/seguisb.eot');
+//   src: local("Segoe Semibold"), url('../fonts/seguisb.eot?#iefix') format('embedded-opentype'), url('../fonts/seguisb.woff') format('woff'), url('../fonts/seguisb.svg#SegoeUISemibold') format('svg');
+//   font-weight: 700;
+//   font-style: normal;
+// }
+
+// @font-face {
+//   font-family: 'Segoe UI';
+//   src: url('../fonts/segoeuib.eot');
+//   src: local("Segoe Bold"), url('../fonts/segoeuib.eot?#iefix') format('eot'), url('../fonts/segoeuib.woff') format('woff'), url('../fonts/segoeuib.svg#SegoeUIBold') format('svg');
+//   font-weight: 900;
+//   font-style: normal;
+// }
+
+// body {
+//   color: $black;
+//   font-family: 'Segoe UI', sans-serif;
+//   font-weight: 400;
+// }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   font-weight: 400;
+// }
+
+// a {
+//   text-decoration: none !important;
+// }
+
+// input:-webkit-autofill {
+//   -webkit-box-shadow: 0 0 0 50px white inset !important;
+// }
+
+// @include placeholder() {
+//   font-family: 'Segoe UI';
+// }
+
+// .table thead th {
+//   border-bottom: 2px solid #bfbfbf;
+// }
+
+// .table th, .table td {
+//   border-top: 0;
+//   border-bottom: 1px solid #e9ecef;
+// }
+
+// /*Edit bootstrap*/
+// @include media-breakpoint-up(xl) {
+//   .container {
+//     width: 1200px;
+//   }
+// }
+
+// /*MDBootstrap*/
+// $input-disabled-color: $input-border-color;
+// $input-focus-color: #C00000;
+// // Text inputs
+// input[type=text],
+// input[type=password],
+// input[type=email],
+// input[type=url],
+// input[type=time],
+// input[type=date],
+// input[type=datetime-local],
+// input[type=tel],
+// input[type=number],
+// input[type=search-md],
+// input[type=search],
+// textarea.md-textarea {
+//   // Disabled
+//   &:disabled {
+//     color: $input-disabled-color;
+//     border-bottom: 1px solid $input-disabled-color;
+//     background-color: transparent;
+
+//     + label {
+//       color: $input-disabled-color;
+//       background-color: transparent;
+//     }
+//   }
+//   //Readonly
+//   &[readonly], &[readonly="readonly"] {
+//     border-bottom: 1px solid $input-disabled-color;
+//   }
+//   // Focused input style
+//   &:focus:not([readonly]) {
+//     border-bottom: 1px solid $input-focus-color;
+//     box-shadow: 0 1px 0 0 $input-focus-color;
+//     // Focused label style
+//     + label {
+//       color: $input-focus-color;
+//     }
+//   }
+// }
+// // Input with label
+// .form-control {
+//   color: $black;
+
+//   &:focus {
+//     color: $black;
+//   }
+
+//   &:disabled, &[readonly] {
+//     color: $black;
+//   }
+// }
+// // Input + label wrapper styles
+// .md-form {
+//   width: 100%;
+
+//   &.form-xs {
+//     margin-bottom: 1.1rem;
+
+//     input {
+//       padding-bottom: 0rem;
+//       padding-top: 0.2rem;
+//       font-size: 1rem;
+//       line-height: 0.5;
+
+//       @include placeholder() {
+//         font-size: .9rem;
+//       }
+
+//       &[type=text],
+//       &[type=password],
+//       &[type=email],
+//       &[type=url],
+//       &[type=time],
+//       &[type=date],
+//       &[type=datetime-local],
+//       &[type=tel],
+//       &[type=number],
+//       &[type=search-md],
+//       &[type=search] {
+//         height: 1.6rem;
+//       }
+//     }
+
+//     .form-control {
+//       margin-bottom: 0;
+//     }
+
+//     label {
+//       font-size: 0.9rem;
+//       top: .4rem;
+//       @include text-truncate();
+
+//       &.active {
+//         font-size: .7rem;
+//         top: .8rem;
+//       }
+//     }
+
+//     .inputVal {
+//       font-size: .7rem;
+//       top: 28px;
+//     }
+//   }
+//   //1 icon right input
+//   &.have-one-icon {
+//     padding-right: 20px;
+
+//     input {
+//       padding-right: 20px;
+//     }
+//   }
+//   //2 icon right input
+//   &.have-two-icon {
+//     padding-right: 45px;
+
+//     input {
+//       padding-right: 45px;
+//     }
+//   }
+//   //position icon right input
+//   .group-icon {
+//     position: absolute;
+//     top: 5px;
+//     right: 0px;
+//   }
+// }
+
+// .inputVal {
+//   right: 0;
+// }
+
+// /*Checkbox*/
+// [type="checkbox"] {
+//   visibility: visible;
+
+//   + label:before {
+//     border-color: #bdbdbd;
+//   }
+
+//   &:focus + label:before {
+//     border-color: $input-focus-color;
+//   }
+
+//   &:checked + label:before {
+//     border-color: transparent red red transparent;
+//   }
+// }
+
+// /*Switch*/
+// .switch label {
+//   padding-top: 10px;
+//   font-size: .9rem;
+
+//   .lever {
+//     background-color: white;
+//     border: 1px solid #bdbdbd;
+//     border-radius: 0;
+//     @include size(40px, 22px);
+//     margin-left: 0;
+//     margin-right: .25rem;
+
+//     &:after {
+//       background-color: #D8D8D8;
+//       border-radius: 0;
+//       box-shadow: none !important;
+//       @include size(18px);
+//       left: 1px;
+//       top: 1px;
+//     }
+//   }
+
+//   input[type=checkbox] {
+//     &:focus + .lever {
+//       border: 1px solid $input-focus-color;
+//     }
+
+//     &:checked + .lever {
+//       background-color: #ffebee;
+
+//       &:after {
+//         background-color: red;
+//         left: 19px;
+//       }
+//     }
+//   }
+// }
+
+// /*Edit style Kendo*/
+// .k-combobox, .k-datepicker {
+//   width: 100%;
+
+//   .k-dropdown-wrap, .k-picker-wrap {
+//     border: none;
+//     border-radius: 0;
+//     border-bottom: 1px solid #bdbdbd;
+//     margin-top: .1rem;
+
+//     label {
+//       top: .5rem;
+
+//       &.active {
+//         top: .9rem;
+//       }
+//     }
+
+//     .inputVal {
+//       top: 30px;
+//     }
+
+//     .k-input {
+//       color: $black !important;
+//       padding-left: 0px;
+//     }
+
+//     .k-clear-value {
+//       margin-top: -.3rem;
+//     }
+
+//     .k-select {
+//       background: none !important;
+//       border-radius: 0;
+//       color: #656565 !important;
+
+//       .fa {
+//         padding-top: .5rem;
+//       }
+//     }
+
+//     &.k-state-focused {
+//       border-bottom: 1px solid $input-focus-color;
+//       box-shadow: 0 1px 0 0 $input-focus-color;
+
+//       label {
+//         color: $input-focus-color;
+//       }
+//     }
+
+//     &.counter-danger .inputVal {
+//       visibility: visible !important;
+//     }
+//   }
+// }
+
+// .k-maskedtextbox {
+//   width: 100%;
+
+//   label {
+//     top: .6rem !important;
+
+//     &.active {
+//       top: 1rem !important;
+//     }
+//   }
+
+//   .inputVal {
+//     top: 31px !important;
+//   }
+// }
