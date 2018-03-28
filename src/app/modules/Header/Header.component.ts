@@ -10,6 +10,14 @@ export class HeaderComponent  {
     constructor() {
        
     }
+    iconsSelect: Array<any>;
+
+    ngOnInit() { 
+        this.iconsSelect = [
+            { value: '1', label: 'Nam', icon: 'https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg' },
+            { value: '2', label: 'Nữ', icon: 'https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg' },
+        ];
+    } 
     hcmus() {
         var urlPre ='https://www.hcmus.edu.vn';
         var windowChild = window.open(urlPre, "windowChild");

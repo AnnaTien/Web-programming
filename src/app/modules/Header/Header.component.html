@@ -226,103 +226,253 @@
 </div>
 <!--Modal: Contact form-->
 
-
-<!--Modal: Login / Register Form-->
-<div mdbModal #Loginform="mdb-modal" class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div mdbModal #Loginform="mdb-modal" class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog cascading-modal" role="document">
         <!--Content-->
         <div class="modal-content">
 
-            <!--Modal cascading tabs-->
-            <div class="modal-c-tabs">
+            <!--Header-->
+            <div class="modal-header light-blue darken-3 white-text">
+                <h4 class="title">
+                    <i class="fa fa-user"></i> Log in</h4>
+                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="Loginform.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <div class="md-form form-sm">
+                    <i class="fa fa-envelope prefix"></i>
+                    <input mdbActive type="text" id="form30" class="form-control">
+                    <label for="form30">Your email</label>
+                </div>
 
-                <!-- Tab panels -->
-                <mdb-tabset #staticTabs [buttonClass]="'nav nav-tabs tabs-2 light-blue darken-3'" [contentClass]="''" class="tab-content">
-                    <!--Panel 7-->
-                    <mdb-tab class="tab-pane fade in show active" id="panel7" role="tabpanel" heading="<i class='fa fa-user mr-1'></i> Login">
+                <div class="md-form form-sm">
+                    <i class="fa fa-lock prefix"></i>
+                    <input mdbActive type="password" id="form31" class="form-control">
+                    <label for="form31">Your password</label>
+                </div>
 
-                        <!--Body-->
-                        <div class="modal-body mb-1">
-                            <div class="md-form form-sm">
-                                <i class="fa fa-envelope prefix"></i>
-                                <input mdbActive type="text" id="form22" class="form-control">
-                                <label for="form22">Your email</label>
-                            </div>
+                <div class="text-center mt-2">
+                    <button class="btn btn-info waves-light" mdbRippleRadius>Log in
+                        <i class="fa fa-sign-in ml-1"></i>
+                    </button>
+                </div>
 
-                            <div class="md-form form-sm">
-                                <i class="fa fa-lock prefix"></i>
-                                <input mdbActive type="password" id="form23" class="form-control">
-                                <label for="form23">Your password</label>
-                            </div>
-                            <div class="text-center mt-2">
-                                <button class="btn btn-info waves-light" mdbRippleRadius>Log in
-                                    <i class="fa fa-sign-in ml-1"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <!--Footer-->
-                        <div class="modal-footer display-footer">
-                            <div class="options text-center text-md-right mt-1">
-                                <p>Not a member?
-                                    <a href="#" class="blue-text">Sign Up</a>
-                                </p>
-                                <p>Forgot
-                                    <a href="#" class="blue-text">Password?</a>
-                                </p>
-                            </div>
-                            <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="Loginform.hide()" mdbRippleRadius>Close</button>
-                        </div>
-
-                    </mdb-tab>
-                    <!--/.Panel 7-->
-
-                    <!--Panel 8-->
-                    <mdb-tab class="tab-pane fade" id="panel8" role="tabpanel" heading="<i class='fa fa-user-plus mr-1'></i> Register">
-
-                        <!--Body-->
-                        <div class="modal-body">
-                            <div class="md-form form-sm">
-                                <i class="fa fa-envelope prefix"></i>
-                                <input mdbActive type="text" id="form24" class="form-control">
-                                <label for="form24">Your email</label>
-                            </div>
-
-                            <div class="md-form form-sm">
-                                <i class="fa fa-lock prefix"></i>
-                                <input mdbActive type="password" id="form25" class="form-control">
-                                <label for="form25">Your password</label>
-                            </div>
-
-                            <div class="md-form form-sm">
-                                <i class="fa fa-lock prefix"></i>
-                                <input mdbActive type="password" id="form26" class="form-control">
-                                <label for="form26">Repeat password</label>
-                            </div>
-
-                            <div class="text-center form-sm mt-2">
-                                <button class="btn btn-info waves-light" mdbRippleRadius>Sign up
-                                    <i class="fa fa-sign-in ml-1"></i>
-                                </button>
-                            </div>
-
-                        </div>
-                        <!--Footer-->
-                        <div class="modal-footer">
-                            <div class="options text-right">
-                                <p class="pt-1">Already have an account?
-                                    <a href="#" class="blue-text">Log In</a>
-                                </p>
-                            </div>
-                            <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="Loginform.hide()" mdbRippleRadius>Close</button>
-                        </div>
-                    </mdb-tab>
-                    <!--/.Panel 8-->
-                </mdb-tabset>
-
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <div class="options text-center text-md-right mt-1">
+                    <p>Not a member?
+                        <a (click)="Registerform.show();Loginform.hide()">Sign Up</a>
+                    </p>
+                    <p>Forgot
+                        <a (click)="ForgotPasswordform.show();Loginform.hide()">Password?</a>
+                    </p>
+                </div>
+                <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="Loginform.hide()" mdbRippleRadius>Close</button>
             </div>
         </div>
         <!--/.Content-->
     </div>
 </div>
-<!--Modal: Login / Register Form-->
+<!--Modal: Login Form-->
+
+<!--Modal: ForgotPassword Form-->
+<div mdbModal #ForgotPasswordform="mdb-modal" class="modal fade" id="modalForgotPassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Header-->
+            <div class="modal-header light-blue darken-3 white-text">
+                <h4 class="title">
+                    <i class="fa fa-user-plus"></i>Forgot Password</h4>
+                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="ForgotPasswordform.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+
+                <div class="md-form form-sm">
+                    <i class="fa fa-lock prefix"></i>
+                    <input mdbActive type="password" id="form33" class="form-control">
+                    <label for="form33">Your password</label>
+                </div>
+
+                <div class="md-form form-sm">
+                    <i class="fa fa-lock prefix"></i>
+                    <input mdbActive type="password" id="form34" class="form-control">
+                    <label for="form34">Repeat password</label>
+                </div>
+
+                <div class="text-center mt-2">
+                    <button class="btn btn-info waves-light" mdbRippleRadius>Send
+                        <i class="fa fa-sign-in ml-1"></i>
+                    </button>
+                </div>
+
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <div class="options text-center text-md-right mt-1">
+                    <p>Already have an account?
+                        <a (click)="Loginform.show();ForgotPasswordform.hide()">Log In</a>
+                    </p>
+                </div>
+                <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="ForgotPasswordform.hide()" mdbRippleRadius>Close</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!--Modal: ForgotPassword Form-->
+
+<!--Modal: Register Form-->
+<div mdbModal #Registerform="mdb-modal" class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog cascading-modal modal-lg" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Header-->
+            <div class="modal-header light-blue darken-3 white-text">
+                <h4 class="title">
+                    <i class="fa fa-user-plus"></i> Register</h4>
+                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="Registerform.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+
+                <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+                    <!-- Collapsible link -->
+                    <mdb-item>
+                        <mdb-item-head mdbRippleRadius>
+                            <i class="fa fa-graduation-cap"></i> Person Info</mdb-item-head>
+                        <mdb-item-body>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="md-form form-sm">
+                                        <input mdbActive type="text" id="form32" class="form-control">
+                                        <label for="form32">Frist Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="md-form form-sm">
+                                        <input mdbActive type="password" id="form33" class="form-control">
+                                        <label for="form33">Last name</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                        <mdb-select [options]="iconsSelect"></mdb-select>
+                                        <label>Gender</label>
+
+                                </div>
+                                <div class="col-6">
+                                    <div class="md-form form-sm">
+                                        <i class="fa fa-lock prefix"></i>
+                                        <input mdbActive type="password" id="form34" class="form-control">
+                                        <label for="form34">Date of Birth</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                        <mdb-select [options]="iconsSelect"></mdb-select>
+                                        <label>category</label>
+                                </div>
+                                <div class="col-6">
+                                    <div class="md-form form-sm ">
+                                            <form class="form-inline">
+                                                    <div class="form-group">
+                                                            <label class="pr-5">category</label>
+                                                        </div>
+                                                    <div class="form-group">
+                                                        <input name="group1" type="radio" id="radio11" checked="checked">
+                                                        <label for="radio11">Option 1</label>
+                                                    </div>
+                                                
+                                                    <div class="form-group">
+                                                        <input name="group1" type="radio" id="radio21">
+                                                        <label for="radio21">Option 2</label>
+                                                    </div>
+                                                </form>
+                                                
+                                    </div>
+                                </div>
+                            </div>
+                        </mdb-item-body>
+                    </mdb-item>
+                    <mdb-item>
+                        <mdb-item-head mdbRippleRadius>
+                            <i class="fa fa-graduation-cap"></i> Address</mdb-item-head>
+                        <mdb-item-body>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="md-form form-sm">
+                                        <i class="fa fa-envelope prefix"></i>
+                                        <input mdbActive type="text" id="form32" class="form-control">
+                                        <label for="form32">Your email</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="md-form form-sm">
+                                        <i class="fa fa-lock prefix"></i>
+                                        <input mdbActive type="password" id="form33" class="form-control">
+                                        <label for="form33">Your password</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="md-form form-sm">
+                                        <i class="fa fa-lock prefix"></i>
+                                        <input mdbActive type="password" id="form34" class="form-control">
+                                        <label for="form34">Repeat password</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="md-form form-sm">
+                                        <i class="fa fa-lock prefix"></i>
+                                        <input mdbActive type="password" id="form34" class="form-control">
+                                        <label for="form34">Repeat password</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="md-form form-sm">
+                                        <i class="fa fa-lock prefix"></i>
+                                        <input mdbActive type="password" id="form34" class="form-control">
+                                        <label for="form34">Repeat password</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <mdb-select [options]="iconsSelect" placeholder="Choose your option"></mdb-select>
+                                    <label>Country</label>
+                                </div>
+                            </div>
+                        </mdb-item-body>
+                    </mdb-item>
+
+                </mdb-squeezebox>
+                <div class="text-center mt-2">
+                    <button class="btn btn-info waves-light" mdbRippleRadius>Sign up
+                        <i class="fa fa-sign-in ml-1"></i>
+                    </button>
+                </div>
+
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <div class="options text-center text-md-right mt-1">
+                    <p>Already have an account?
+                        <a (click)="Registerform.hide();Loginform.show()">Log In</a>
+                    </p>
+                </div>
+                <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="Registerform.hide()" mdbRippleRadius>Close</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!--Modal: Register Form-->
