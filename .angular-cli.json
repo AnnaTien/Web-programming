@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "Web-programming"
+    "name": "Webprogramming"
   },
   "apps": [
     {
       "root": "src",
-      "outDir": "release",
+      "outDir": "dist",
       "assets": [
         "assets",
         "favicon.ico",
