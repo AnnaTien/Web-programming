@@ -39,7 +39,7 @@
                                                         <div class="switch">
                                                             <label>
                                                                 <span class="font-14">Gender</span>
-                                                                <input #input type="checkbox" (change)="onChange($event)">
+                                                                <input #input type="checkbox" (change)="this.showtext = !this.showtext;">
                                                                 <span class="lever"></span>
                                                                 <span *ngIf="showtext" class="font-12">Male</span>
                                                                 <span *ngIf="!(showtext)" class="font-12">Female</span>
@@ -130,7 +130,7 @@
 
                                 <ul class="contact-icons">
                                     <li>
-                                        <i class="fa fa-map-marker"></i>
+                                        <i class="fa fa-user"></i>
                                         <p>Nguyễn Ngọc Linh Tiên</p>
                                     </li>
 
@@ -144,7 +144,6 @@
                                         <p>nguyenngoclinhtien1001@gmail.com</p>
                                     </li>
                                 </ul>
-
 
                             </div>
                         </div>
