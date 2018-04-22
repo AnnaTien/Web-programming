@@ -14,14 +14,19 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './modules/Header/Header.component';
 import { FooterComponent } from './modules/Footer/Footer.component';
 import { HomeworkComponent } from './Page/Homework/Homework.component';
+import { RegistrationComponent } from './Page/Registration/Registration.component';
+import { TeammemberComponent } from './Page/Teammember/Teammember.component';
+
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         FooterComponent, 
-        HomeworkComponent
-
+        HomeworkComponent,
+        HomePageComponent,
+        RegistrationComponent,
+        TeammemberComponent
     ],
     imports: [
         BrowserModule,

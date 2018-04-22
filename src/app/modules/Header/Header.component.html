@@ -1,259 +1,264 @@
 <!--Double navigation-->
 <header class="light-blue-skin">
-    <!-- Sidebar navigation -->
-    <mdb-sidenav #sidenav class="sn-bg-1" [fixed]="false">
-        <logo>
+  <!-- Sidebar navigation -->
+  <mdb-sidenav #sidenav class="sn-bg-1" [fixed]="false">
+    <logo>
 
-            <img src="../../../assets/img/home/website.jpg" class="img-fluid" height="50" width="100%">
+      <img src="../../../assets/img/home/website.jpg" class="img-fluid" height="50" width="100%">
 
-        </logo>
-        <links>
-            <!--Social-->
-            <li>
-                <ul class="social">
-                    <li>
-                        <a class="icons-sm fb-ic" (click)="facebook()">
-                            <i class="fa fa-facebook"> </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="icons-sm pin-ic" (click)="pinterest()">
-                            <i class="fa fa-pinterest"> </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="icons-sm gplus-ic" (click)="googleplus()">
-                            <i class="fa fa-google-plus"> </i>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="icons-sm tw-ic" (click)="twitter()">
-                            <i class="fa fa-twitter"> </i>
-                        </a>
-                    </li>
+    </logo>
+    <links>
+      <!--Social-->
+      <li>
+        <ul class="social">
+          <li>
+            <a class="icons-sm fb-ic" (click)="facebook()">
+              <i class="fa fa-facebook"> </i>
+            </a>
+          </li>
+          <li>
+            <a class="icons-sm pin-ic" (click)="pinterest()">
+              <i class="fa fa-pinterest"> </i>
+            </a>
+          </li>
+          <li>
+            <a class="icons-sm gplus-ic" (click)="googleplus()">
+              <i class="fa fa-google-plus"> </i>
+            </a>
+          </li>
+          <li>
+            <a class="icons-sm tw-ic" (click)="twitter()">
+              <i class="fa fa-twitter"> </i>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <!--/Social-->
+      <!--Search Form-->
+      <li>
+        <form class="search-form" role="search">
+          <div class="form-group waves-light" mdbRippleRadius>
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+      </li>
+      <!--/.Search Form-->
+      <!-- Side navigation links -->
+      <li>
+        <ul class="collapsible collapsible-accordion">
+          <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+
+            <!-- Collapsible link -->
+            <mdb-item>
+              <mdb-item-head mdbRippleRadius>
+                <i class="fa fa-graduation-cap"></i> Trường ĐHKHTN</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a (click)="hcmus()" class="waves-effect" mdbRippleRadius>Hcmus</a>
+                  </li>
+                  <li>
+                    <a (click)="courses()" class="waves-effect" mdbRippleRadius>Moodle</a>
+                  </li>
+                  <li>
+                    <a (click)="portal()" class="waves-effect" mdbRippleRadius>Portal</a>
+                  </li>
                 </ul>
-            </li>
-            <!--/Social-->
-            <!--Search Form-->
-            <li>
-                <form class="search-form" role="search">
-                    <div class="form-group waves-light" mdbRippleRadius>
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                </form>
-            </li>
-            <!--/.Search Form-->
-            <!-- Side navigation links -->
-            <li>
-                <ul class="collapsible collapsible-accordion">
-                    <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+              </mdb-item-body>
+            </mdb-item>
+            <mdb-item>
+              <mdb-item-head mdbRippleRadius>
+                <i class="fa fa-globe"></i> Lập trình Web</mdb-item-head>
+              <mdb-item-body>
+                <ul>
+                  <li>
+                    <a (click)="w3schools()" class="waves-effect" mdbRippleRadius>W3schools</a>
+                  </li>
+                  <li>
+                    <a (click)="telerik()" class="waves-effect" mdbRippleRadius>Telerik</a>
+                  </li>
+                  <li>
+                    <a (click)="getbootstrap()" class="waves-effect" mdbRippleRadius>Bootstrap</a>
+                  </li>
+                  <li>
+                    <a (click)="angular()" class="waves-effect" mdbRippleRadius>Angular</a>
+                  </li>
+                  <li>
+                    <a (click)="mdbootstrap()" class="waves-effect" mdbRippleRadius>Mdbootstrap</a>
+                  </li>
 
-                        <!-- Collapsible link -->
-                        <mdb-item>
-                            <mdb-item-head mdbRippleRadius>
-                                <i class="fa fa-graduation-cap"></i> Trường ĐHKHTN</mdb-item-head>
-                            <mdb-item-body>
-                                <ul>
-                                    <li>
-                                        <a (click)="hcmus()" class="waves-effect" mdbRippleRadius>Hcmus</a>
-                                    </li>
-                                    <li>
-                                        <a (click)="courses()" class="waves-effect" mdbRippleRadius>Moodle</a>
-                                    </li>
-                                    <li>
-                                        <a (click)="portal()" class="waves-effect" mdbRippleRadius>Portal</a>
-                                    </li>
-                                </ul>
-                            </mdb-item-body>
-                        </mdb-item>
-                        <mdb-item>
-                            <mdb-item-head mdbRippleRadius>
-                                <i class="fa fa-globe"></i> Lập trình Web</mdb-item-head>
-                            <mdb-item-body>
-                                <ul>
-                                    <li>
-                                        <a (click)="w3schools()" class="waves-effect" mdbRippleRadius>W3schools</a>
-                                    </li>
-                                    <li>
-                                        <a (click)="telerik()" class="waves-effect" mdbRippleRadius>Telerik</a>
-                                    </li>
-                                    <li>
-                                        <a (click)="getbootstrap()" class="waves-effect" mdbRippleRadius>Bootstrap</a>
-                                    </li>
-                                    <li>
-                                        <a (click)="angular()" class="waves-effect" mdbRippleRadius>Angular</a>
-                                    </li>
-                                    <li>
-                                        <a (click)="mdbootstrap()" class="waves-effect" mdbRippleRadius>Mdbootstrap</a>
-                                    </li>
-
-                                </ul>
-                            </mdb-item-body>
-                        </mdb-item>
-                    </mdb-squeezebox>
                 </ul>
-            </li>
-            <!--/. Side navigation links -->
-        </links>
-        <div class="sidenav-bg mask-strong"></div>
-    </mdb-sidenav>
-    <!--/. Sidebar navigation -->
+              </mdb-item-body>
+            </mdb-item>
+          </mdb-squeezebox>
+        </ul>
+      </li>
+      <!--/. Side navigation links -->
+    </links>
+    <div class="sidenav-bg mask-strong"></div>
+  </mdb-sidenav>
+  <!--/. Sidebar navigation -->
 
-    <!-- Navbar -->
-    <mdb-navbar SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg bg-indigo scrolling-navbar double-nav" [containerInside]="false">
+  <!-- Navbar -->
+  <mdb-navbar SideClass="navbar fixed-top navbar-toggleable-md navbar-expand-lg bg-indigo scrolling-navbar double-nav" [containerInside]="false">
 
-        <navlinks class="navbar-container">
-            <!-- SideNav slide-out button -->
-            <div class="float-left">
-                <a (click)="sidenav.show()" class="button-collapse hidden-nav-button-collapse">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div>
-            <!--/. SideNav slide-out button -->
-        </navlinks>
+    <navlinks class="navbar-container">
+      <!-- SideNav slide-out button -->
+      <div class="float-left">
+        <a (click)="sidenav.show()" class="button-collapse hidden-nav-button-collapse">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <!--/. SideNav slide-out button -->
+    </navlinks>
 
-        <!-- Breadcrumb-->
-        <div class="breadcrumbs breadcrumbs-hidden-nav breadcrumb-dn mr-auto">
-            <p>Web Design</p>
-        </div>
-        <!--/. Breadcrumb-->
+    <!-- Breadcrumb-->
+    <div class="breadcrumbs breadcrumbs-hidden-nav breadcrumb-dn mr-auto">
+      <p>Web Design</p>
+    </div>
+    <!--/. Breadcrumb-->
 
 
-        <navlinks>
-            <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav ie-hidden-double-nav">                
-                <li class="nav-item">
-                    <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/homework']">
-                        <i class="fa fa-file"></i>
-                        <span class="clearfix d-none d-sm-inline-block">Homework</span>
-                    </a>
-                </li>               
-                <li class="nav-item">
-                    <a class="nav-link waves-light" mdbRippleRadius>
-                        <i class="fa fa-envelope"></i>
-                        <span class="clearfix d-none d-sm-inline-block" (click)="Contactform.show()">Contact</span>
-                    </a>
-                </li>
+    <navlinks>
+      <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav ie-hidden-double-nav">
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/homepage']">
+            <i class="fa fa-home"></i>
+            <span class="clearfix d-none d-sm-inline-block">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/homework']">
+            <i class="fa fa-file"></i>
+            <span class="clearfix d-none d-sm-inline-block">Homework</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbRippleRadius>
+            <i class="fa fa-envelope"></i>
+            <span class="clearfix d-none d-sm-inline-block" (click)="Contactform.show()">Contact</span>
+          </a>
+        </li>
 
-                <li class="nav-item">
-                    <a class="nav-link waves-light" (click)="Loginform.show()" mdbRippleRadius>
-                        <i class="fa fa-sign-in"></i>
-                        <span class="clearfix d-none d-sm-inline-block">Log In</span>
-                    </a>
-                </li>               
-            </ul>
-        </navlinks>
-    </mdb-navbar>
-    <!--/. Navbar -->
+        <li class="nav-item">
+          <a class="nav-link waves-light" (click)="Loginform.show()" mdbRippleRadius>
+            <i class="fa fa-sign-in"></i>
+            <span class="clearfix d-none d-sm-inline-block">Log In</span>
+          </a>
+        </li>
+      </ul>
+    </navlinks>
+  </mdb-navbar>
+  <!--/. Navbar -->
 
 </header>
 <!--/.Double navigation-->
 
 <!--Main Layout-->
 <main>
-    <div class="container-fluid">
-        <span>&nbsp;</span>
+  <div class="container-fluid">
+    <span>&nbsp;</span>
 
-    </div>
+  </div>
 </main>
 <!--/Main layout-->
 
 <!--Modal: Contact form-->
 <div mdbModal #Contactform="mdb-modal" class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog cascading-modal" role="document">
-        <!--Content-->
-        <div class="modal-content">
+  aria-hidden="true">
+  <div class="modal-dialog cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content">
 
-            <!--Header-->
-            <div class="modal-header light-blue darken-3 white-text">
-                <h4 class="title">
-                    <i class="fa fa-pencil"></i> Contact</h4>
-                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="Contactform.hide()">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <!--Body-->
-            <div class="modal-body mb-0">
-                <div class="md-form form-sm">
-                    <i class="fa fa-envelope prefix"></i>
-                    <input mdbActive type="text" id="form19" class="form-control">
-                    <label for="form19">Your name</label>
-                </div>
-
-                <div class="md-form form-sm">
-                    <i class="fa fa-lock prefix"></i>
-                    <input mdbActive type="password" id="form20" class="form-control">
-                    <label for="form20">Your email</label>
-                </div>
-
-                <div class="md-form form-sm">
-                    <i class="fa fa-tag prefix"></i>
-                    <input mdbActive type="text" id="form21" class="form-control">
-                    <label for="form21">Subject</label>
-                </div>
-
-                <div class="md-form form-sm">
-                    <i class="fa fa-pencil prefix"></i>
-                    <textarea mdbActive type="text" id="form8" class="md-textarea mb-0"></textarea>
-                    <label for="form8">Your message</label>
-                </div>
-
-                <div class="text-center mt-1-half">
-                    <button class="btn btn-info mb-2 waves-light" mdbRippleRadius>Send
-                        <i class="fa fa-send ml-1"></i>
-                    </button>
-                </div>
-
-            </div>
+      <!--Header-->
+      <div class="modal-header light-blue darken-3 white-text">
+        <h4 class="title">
+          <i class="fa fa-pencil"></i> Contact</h4>
+        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="Contactform.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+        <div class="md-form form-sm">
+          <i class="fa fa-envelope prefix"></i>
+          <input mdbActive type="text" id="form19" class="form-control">
+          <label for="form19">Your name</label>
         </div>
-        <!--/.Content-->
+
+        <div class="md-form form-sm">
+          <i class="fa fa-lock prefix"></i>
+          <input mdbActive type="password" id="form20" class="form-control">
+          <label for="form20">Your email</label>
+        </div>
+
+        <div class="md-form form-sm">
+          <i class="fa fa-tag prefix"></i>
+          <input mdbActive type="text" id="form21" class="form-control">
+          <label for="form21">Subject</label>
+        </div>
+
+        <div class="md-form form-sm">
+          <i class="fa fa-pencil prefix"></i>
+          <textarea mdbActive type="text" id="form8" class="md-textarea mb-0"></textarea>
+          <label for="form8">Your message</label>
+        </div>
+
+        <div class="text-center mt-1-half">
+          <button class="btn btn-info mb-2 waves-light" mdbRippleRadius>Send
+            <i class="fa fa-send ml-1"></i>
+          </button>
+        </div>
+
+      </div>
     </div>
+    <!--/.Content-->
+  </div>
 </div>
 <!--Modal: Contact form-->
 
 <div mdbModal #Loginform="mdb-modal" class="modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog cascading-modal" role="document">
-        <!--Content-->
-        <div class="modal-content">
+  aria-hidden="true">
+  <div class="modal-dialog cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content">
 
-            <!--Header-->
-            <div class="modal-header light-blue darken-3 white-text">
-                <h4 class="title">
-                    <i class="fa fa-user"></i> Log in</h4>
-                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="Loginform.hide()">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <!--Body-->
-            <div class="modal-body">
-                <div class="md-form form-sm">
-                    <i class="fa fa-envelope prefix"></i>
-                    <input mdbActive type="text" id="form30" class="form-control">
-                    <label for="form30">Your email</label>
-                </div>
-
-                <div class="md-form form-sm">
-                    <i class="fa fa-lock prefix"></i>
-                    <input mdbActive type="password" id="form31" class="form-control">
-                    <label for="form31">Your password</label>
-                </div>
-
-                <div class="text-center mt-2">
-                    <button class="btn btn-info waves-light" mdbRippleRadius>Log in
-                        <i class="fa fa-sign-in ml-1"></i>
-                    </button>
-                </div>
-
-            </div>
-            <!--Footer-->
-            <div class="modal-footer">               
-                <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="Loginform.hide()" mdbRippleRadius>Close</button>
-            </div>
+      <!--Header-->
+      <div class="modal-header light-blue darken-3 white-text">
+        <h4 class="title">
+          <i class="fa fa-user"></i> Log in</h4>
+        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="Loginform.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+        <div class="md-form form-sm">
+          <i class="fa fa-envelope prefix"></i>
+          <input mdbActive type="text" id="form30" class="form-control">
+          <label for="form30">Your email</label>
         </div>
-        <!--/.Content-->
+
+        <div class="md-form form-sm">
+          <i class="fa fa-lock prefix"></i>
+          <input mdbActive type="password" id="form31" class="form-control">
+          <label for="form31">Your password</label>
+        </div>
+
+        <div class="text-center mt-2">
+          <button class="btn btn-info waves-light" mdbRippleRadius>Log in
+            <i class="fa fa-sign-in ml-1"></i>
+          </button>
+        </div>
+
+      </div>
+      <!--Footer-->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="Loginform.hide()" mdbRippleRadius>Close</button>
+      </div>
     </div>
+    <!--/.Content-->
+  </div>
 </div>
 <!--Modal: Login Form-->
-
 
