@@ -10,8 +10,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico",
-        "../img"
+        "favicon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -23,10 +22,10 @@
       "styles": [
         "../node_modules/font-awesome/scss/font-awesome.scss",
         "../scss/bootstrap/bootstrap.scss",
-        "../scss/mdb.scss"
+        "../scss/mdb.scss",
+        "assets/stype/app.scss"
       ],
-      "scripts": [      
-       
+      "scripts": [
         "../node_modules/hammerjs/hammer.min.js"
       ],
       "environmentSource": "environments/environment.ts",
@@ -63,7 +62,6 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "component": {
-    }
+    "component": {}
   }
 }

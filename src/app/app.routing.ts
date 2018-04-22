@@ -5,7 +5,7 @@ import { RegistrationComponent } from './Page/Registration/Registration.componen
 import { TeammemberComponent } from './Page/Teammember/Teammember.component';
 import { HomePageComponent } from './page/HomePage/HomePage.component';
 const routes: Routes = [
-    { path: '', redirectTo: 'homePage', pathMatch: 'full' },
+    { path: '', redirectTo: 'homepage', pathMatch: 'full' },
     { path: 'homepage', component: HomePageComponent },
     { path: 'homework', component: HomeworkComponent },
     { path: 'registration', component: RegistrationComponent },
