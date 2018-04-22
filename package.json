@@ -1,14 +1,14 @@
 {
-  "name": "quickstart-angular2",
+  "name": "Web-programming",
   "version": "0.0.0",
   "license": "MIT",
+  "angular-cli": {},
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port=4200 -o",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
+    "e2e": "ng e2e", 
     "build:free": "ngm build -p src/app/typescripts/free --clean && gulp npmFree && gulp startFree && gulp onlyFree",
     "build:pro": "ngm build -p src/app/typescripts/pro --clean && gulp only-pro && gulp startPro",
     "build:all": "npm run build:free && npm run build:pro",
