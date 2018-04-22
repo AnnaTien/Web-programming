@@ -38,3 +38,26 @@
 		}
 	}
 }   
+.homework{
+	.carousel .carousel-control-prev-icon {
+		content: "\f000";
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+	/*--adjust as necessary--*/
+		color: #000;
+		font-size: 18px;	
+	
+	}
+	.carousel .carousel-control-next-icon {
+		content: "\f000";
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+	/*--adjust as necessary--*/
+		color: #000;
+		font-size: 18px;	
+	}
+}

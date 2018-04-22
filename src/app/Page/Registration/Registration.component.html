@@ -6,6 +6,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="card-body form">
+
                             <div class="row">
                                 <div class="col-10 mx-auto">
                                     <h3 class="text-center">Register</h3>
@@ -38,7 +39,7 @@
                                                         <div class="switch">
                                                             <label>
                                                                 <span class="font-14">Gender</span>
-                                                                <input #input type="checkbox" (change)="this.showtext = !this.showtext;">
+                                                                <input #input type="checkbox" (change)="onChange($event)">
                                                                 <span class="lever"></span>
                                                                 <span *ngIf="showtext" class="font-12">Male</span>
                                                                 <span *ngIf="!(showtext)" class="font-12">Female</span>
@@ -129,7 +130,7 @@
 
                                 <ul class="contact-icons">
                                     <li>
-                                        <i class="fa fa-user"></i>
+                                        <i class="fa fa-map-marker"></i>
                                         <p>Nguyễn Ngọc Linh Tiên</p>
                                     </li>
 
@@ -143,6 +144,7 @@
                                         <p>nguyenngoclinhtien1001@gmail.com</p>
                                     </li>
                                 </ul>
+
 
                             </div>
                         </div>

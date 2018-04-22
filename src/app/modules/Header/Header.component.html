@@ -120,19 +120,13 @@
 
 
         <navlinks>
-            <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav ie-hidden-double-nav">
+            <ul class="nav navbar-nav nav-flex-icons ml-auto ie-double-nav ie-hidden-double-nav">                
                 <li class="nav-item">
-                    <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/homepage']">
-                        <i class="fa fa-home"></i>
-                        <span class="clearfix d-none d-sm-inline-block">Home</span>
+                    <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/homework']">
+                        <i class="fa fa-file"></i>
+                        <span class="clearfix d-none d-sm-inline-block">Homework</span>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/teammember']">
-                        <i class="fa fa-users"></i>
-                        <span class="clearfix d-none d-sm-inline-block">Team member</span>
-                    </a>
-                </li>
+                </li>               
                 <li class="nav-item">
                     <a class="nav-link waves-light" mdbRippleRadius>
                         <i class="fa fa-envelope"></i>
@@ -145,16 +139,7 @@
                         <i class="fa fa-sign-in"></i>
                         <span class="clearfix d-none d-sm-inline-block">Log In</span>
                     </a>
-                </li>
-                <li class="nav-item dropdown btn-group" dropdown>
-                    <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
-                        Language
-                    </a>
-                    <div class="dropdown-menu dropdown-primary dropdown-menu-right" role="menu">
-                        <a class="dropdown-item" href="#">English</a>
-                        <a class="dropdown-item" href="#">Vietnamese</a>
-                    </div>
-                </li>
+                </li>               
             </ul>
         </navlinks>
     </mdb-navbar>
@@ -262,15 +247,7 @@
 
             </div>
             <!--Footer-->
-            <div class="modal-footer">
-                <div class="options text-center text-md-right mt-1">
-                    <p>Not a member?
-                        <a (click)="Loginform.hide()" [routerLink]="['/registration']">Sign Up</a>
-                    </p>
-                    <p>Forgot
-                        <a (click)="ForgotPasswordform.show();Loginform.hide()">Password?</a>
-                    </p>
-                </div>
+            <div class="modal-footer">               
                 <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="Loginform.hide()" mdbRippleRadius>Close</button>
             </div>
         </div>
@@ -279,54 +256,4 @@
 </div>
 <!--Modal: Login Form-->
 
-<!--Modal: ForgotPassword Form-->
-<div mdbModal #ForgotPasswordform="mdb-modal" class="modal fade" id="modalForgotPassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog cascading-modal" role="document">
-        <!--Content-->
-        <div class="modal-content">
 
-            <!--Header-->
-            <div class="modal-header light-blue darken-3 white-text">
-                <h4 class="title">
-                    <i class="fa fa-user-plus"></i>Forgot Password</h4>
-                <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="ForgotPasswordform.hide()">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <!--Body-->
-            <div class="modal-body">
-
-                <div class="md-form form-sm">
-                    <i class="fa fa-lock prefix"></i>
-                    <input mdbActive type="password" id="form33" class="form-control">
-                    <label for="form33">Your password</label>
-                </div>
-
-                <div class="md-form form-sm">
-                    <i class="fa fa-lock prefix"></i>
-                    <input mdbActive type="password" id="form34" class="form-control">
-                    <label for="form34">Repeat password</label>
-                </div>
-
-                <div class="text-center mt-2">
-                    <button class="btn btn-info waves-light" mdbRippleRadius>Send
-                        <i class="fa fa-sign-in ml-1"></i>
-                    </button>
-                </div>
-
-            </div>
-            <!--Footer-->
-            <div class="modal-footer">
-                <div class="options text-center text-md-right mt-1">
-                    <p>Already have an account?
-                        <a (click)="Loginform.show();ForgotPasswordform.hide()">Log In</a>
-                    </p>
-                </div>
-                <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="ForgotPasswordform.hide()" mdbRippleRadius>Close</button>
-            </div>
-        </div>
-        <!--/.Content-->
-    </div>
-</div>
-<!--Modal: ForgotPassword Form-->

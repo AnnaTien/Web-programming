@@ -1,0 +1,109 @@
+<div class=" row ">
+    <div class="col-2">
+        <!--Card-->
+        <div class="card">
+
+            <!--Card image-->
+            <div class="view hm-white-slight waves-light" mdbRippleRadius>
+                <img src="../../../assets/img/Attractions/file.jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
+                <a>
+                    <div class="mask"></div>
+                </a>
+            </div>
+
+            <!--Card content-->
+            <div class="card-body">
+                <!--Title-->
+                <h5 class="card-title">BÀI TẬP VỀ NHÀ</h5>
+                <!--Text-->
+                <ul>
+                    <li class="font-14">
+                        <a (click)="changehw1()"> Bài tập 1</a>
+
+                    </li>
+                    <li class="font-14">
+                        <a (click)="changehw2()"> Bài tập 2</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <!--/.Card-->
+    </div>
+    <div class="col-10" [hidden]="!homework">
+        <!--Carousel Wrapper-->
+        <mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [type]="'carousel-thumbnails'" [animation]="'fade'">
+            <mdb-slide>
+                <img height="500" width="500" class="d-block col-8 m-auto" src="../../../assets/img/Attractions/1.jpg" alt="First slide">
+            </mdb-slide>
+            <mdb-slide>
+                <img height="500" width="500" class="d-block col-8 m-auto " src="../../../assets/img/Attractions/2.jpg" alt="First slide">
+            </mdb-slide>
+            <mdb-slide>
+                <img height="500" width="500" class="d-block col-8 m-auto" src="../../../assets/img/Attractions/3.jpg" alt="First slide">
+            </mdb-slide>
+            <mdb-slide>
+                <img height="500" width="500" class="d-block col-8 m-auto" src="../../../assets/img/Attractions/4.jpg" alt="First slide">
+            </mdb-slide>
+            <mdb-slide>
+                <img height="500" width="500" class="d-block col-8 m-auto" src="../../../assets/img/Attractions/5.jpg" alt="First slide">
+            </mdb-slide>
+            <mdb-slide>
+                <img height="500" width="500" class="d-block col-8 m-auto" src="../../../assets/img/Attractions/6.jpg" alt="First slide">
+            </mdb-slide>
+            <mdb-slide>
+                <img height="500" width="500" class="d-block col-8 m-auto" src="../../../assets/img/Attractions/7.jpg" alt="First slide">
+            </mdb-slide>
+            <mdb-slide>
+                <img height="500" width="500" class="d-block col-8 m-auto" src="../../../assets/img/Attractions/8.jpg" alt="First slide">
+            </mdb-slide>
+            <mdb-slide>
+                <img height="500" width="500" class="d-block col-8 m-auto" src="../../../assets/img/Attractions/9.jpg" alt="First slide">
+            </mdb-slide>
+            <mdb-slide>
+                <img height="500" width="500" class="d-block col-8 m-auto" src="../../../assets/img/Attractions/10.jpg" alt="First slide">
+            </mdb-slide>            
+        </mdb-carousel>
+        <!--/.Carousel Wrapper-->
+    </div>
+    <div class="col-10" [hidden]="homework">
+        <div class="row px-3">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-3 text-right">
+                        <div class="md-form">
+                            <input mdbActive type="number" id="columns" [(ngModel)]="columns" [min]="1" (change)="valuechangecolumns($event)">
+                            <label for="columns" class="font-12">Number of columns</label>
+                        </div>
+                    </div>
+                    <div class="col-3 text-right">
+                        <div class="md-form">
+                            <input mdbActive type="number" id="rows" [(ngModel)]="rows" [min]="1" (change)="valuechangerows($event)">
+                            <label for="rows" class="font-12">
+                                Number of rows</label>
+                        </div>
+                    </div>
+                </div>
+                <section class="section pb-3">
+                    <h1 class="section-heading h1 pt-4">Bảng cửu Chương</h1>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 pb-4" *ngFor="let column of arraycolumns">
+                            <div class="card">
+                                <div class="header bg-indigo text-center text-white">
+                                    <h1>{{column}}</h1>
+                                </div>
+                                <div class="card-body">
+                                    <p class="font-14" *ngFor="let row of arrayrows">
+                                        <b> {{column}}</b>&nbsp; x&nbsp;
+                                        <b> {{row}}</b> &nbsp;=&nbsp;
+                                        <b>{{column*row}}</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

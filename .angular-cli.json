@@ -1,12 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "Webprogramming"
+    "name": "quickstart-angular2"
   },
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "release",
       "assets": [
         "assets",
         "favicon.ico",
