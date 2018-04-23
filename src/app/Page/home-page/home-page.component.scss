@@ -1,0 +1,19 @@
+.card{
+    height: 14rem;
+    overflow: hidden;
+    .card-body{
+        opacity: 0;
+        margin-top: -14rem;
+        height: 14rem;
+        background-color: #e4e4e466;
+        padding-top: 3.25rem !important;
+    }
+    .card-body:hover{
+        margin-top: -14rem;
+        height: 14rem;
+        background-color: #e4e4e466;
+        padding-top: 3.25rem !important;
+        opacity: 1;
+    }
+}
+
