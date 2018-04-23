@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Routing } from "./app.routing";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from "@angular/http";
-import { HomePageComponent } from './page/HomePage/HomePage.component';
+import { HomePageComponent } from './Page/home-page/home-page.component';
 import { HttpClient } from "@angular/common/http";
 import { HttpClientModule } from "@angular/common/http";
 import { MDBBootstrapModule } from './typescripts/free/index';
