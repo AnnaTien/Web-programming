@@ -1,0 +1,20 @@
+
+<div class="row">
+    <div class="col-md-1 float-left" ></div>
+    <div class="col-md-10">
+        <div class="row product-phone">
+            <div class="col-md-2 float-left" *ngFor="let prod of LstProduct">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="img-fluid" src="{{prod.Image[0].url}}" alt="Card image cap" >
+                    </div>
+                    <div class="card-body mt-1" >
+                        <h6 class="card-title">{{prod.Name}}</h6>
+                        <p class="h6 text-danger">{{prod.Price | currency:'VND':true:'1.0-0'}}</p>
+                        <a (click)="ViewDetail(prod.Code, prod.Type)"  >Xem chi tiết</a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>

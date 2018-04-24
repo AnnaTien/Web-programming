@@ -18,6 +18,7 @@ import { RegistrationComponent } from './Page/Registration/Registration.componen
 import { TeammemberComponent } from './Page/Teammember/Teammember.component';
 import { PhoneComponent } from './Page/phone/phone.component';
 import { PadComponent } from './Page/pad/pad.component';
+import { ListProductComponent } from './Page/list-product/list-product.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { PadComponent } from './Page/pad/pad.component';
         RegistrationComponent,
         TeammemberComponent,
         PhoneComponent,
-        PadComponent
+        PadComponent,
+        ListProductComponent
     ],
     imports: [
         BrowserModule,

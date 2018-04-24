@@ -1,5 +1,5 @@
 
-export  const  ListPhone  = [
+export  const  Products  = [
     {
         "ID":1,
         "Code":"samsung-s9",
@@ -369,15 +369,15 @@ export  const  ListPhone  = [
         "SupplierID": 1,
         "Supplier":"Apple",
         "Promotion": "Trợ giá 1 triệu đồng"
-    }
-]
-
-export const  ListPad = [
+    },
     {
         "ID":11, 
+        "Code": "ipad-pro",
         "Name":"iPad Pro 10.5 inch Wifi Cellular", 
         "Price":19990000, 
-        "Image":"https://cdn.tgdd.vn/Products/Images/522/109599/ipad-pro-105-inch-wifi-cellular-64gb-2017-6-400x400.png", 
+        "Image":[
+            {"url":"https://cdn.tgdd.vn/Products/Images/522/109599/ipad-pro-105-inch-wifi-cellular-64gb-2017-6-400x400.png"}
+        ], 
         "Views":10, 
         "Buys":10, 
         "Description":{
@@ -397,10 +397,14 @@ export const  ListPad = [
             "Note":"Chính hãng"
         }, 
         "Origin":"Apple Singapore", 
-        "Type":1, 
+        "Type":2, 
         "SupplierID": 1,
         "Supplier":"Apple"
     }
+]
+export const Type = [
+    {"ID": 1, "Name":"Điện thoại"},
+    {"ID": 2, "Name":"Máy tính bảng"}
 ]
 
 export const Supplier = [

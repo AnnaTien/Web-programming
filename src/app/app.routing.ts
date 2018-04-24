@@ -6,9 +6,11 @@ import { TeammemberComponent } from './Page/Teammember/Teammember.component';
 import { HomePageComponent } from './Page/home-page/home-page.component';
 import { PhoneComponent } from './Page/phone/phone.component';
 import { PadComponent } from './Page/pad/pad.component';
+import { ListProductComponent } from './Page/list-product/list-product.component';
 const routes: Routes = [
     { path: '', redirectTo: 'homepage', pathMatch: 'full' },
     { path: 'homepage', component: HomePageComponent },
+    { path: 'list-product', component: ListProductComponent },
     { path: 'phone', component: PhoneComponent },
     { path: 'phone/:phonecode', component: PhoneComponent },
     { path: 'pad', component: PadComponent },

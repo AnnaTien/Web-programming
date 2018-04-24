@@ -1,22 +1,15 @@
 <!--Accordion wrapper-->
 <mdb-squeezebox [multiple]="false" aria-multiselectable="true">
-  <mdb-item [collapsed]="false">
-      <mdb-item-head>
-          
-      </mdb-item-head>
-      <mdb-item-body>
-          <!--Carousel Wrapper-->
-          
-          <!--/.Carousel Wrapper-->
-
-      </mdb-item-body>
-  </mdb-item>
-  <h5 class="mb-2"> Sản phẩm mới nhất</h5>
-  <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation product-phone" [type]="'carousel-multi-item'" [animation]="'slide'">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-11"><h5 class="mb-4 font-weight-bold text-primary header">Sản phẩm mới nhất</h5></div>
+    </div>
+  
+    <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation product-phone" [type]="'carousel-multi-item'" [animation]="'slide'">
     <!--First slide-->
     <mdb-slide class="">
         <div class="col-md-1 float-left" ></div>
-        <div class="col-md-2 float-left" *ngFor="let prod of lstPhoneBestSell_1">
+        <div class="col-md-2 float-left" *ngFor="let prod of LstBestSell_1">
           <div class="card">
               <div class="card-image">
                  <img class="img-fluid" src="{{prod.Image[0].url}}" alt="Card image cap">
@@ -34,7 +27,7 @@
     <!--Second slide-->
     <mdb-slide>
         <div class="col-md-1 float-left" ></div>
-        <div class="col-md-2 float-left" *ngFor="let prod of lstPhoneBestSell_2">
+        <div class="col-md-2 float-left" *ngFor="let prod of LstBestSell_2">
             <div class="card">
                 <div class="card-image">
                     <img class="img-fluid" src="{{prod.Image[0].url}}" alt="Card image cap" >
@@ -50,80 +43,92 @@
         
     </mdb-slide>
     <!--/Second slide-->
-</mdb-carousel>
-  <mdb-item [collapsed]="false">
-
-      <mdb-item-head>
-          <span class="h5">Sản phẩm bán chạy nhất</span>
-      </mdb-item-head>
-      <mdb-item-body>
-          <!--Carousel Wrapper-->
-          <mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [type]="'carousel-thumbnails'" [animation]="'fade'">
-              <!--First slide-->
-              <mdb-slide>
-                  <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(88).jpg" alt="First slide">
-              </mdb-slide>
-              <!--/First slide-->
-              <!--Second slide-->
-              <mdb-slide>
-                  <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(121).jpg" alt="Second slide">
-              </mdb-slide>
-              <!--/Second slide-->
-              <!--Third slide-->
-              <mdb-slide>
-                  <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(31).jpg" alt="Third slide">
-              </mdb-slide>
-              <!--/Third slide-->
-          </mdb-carousel>
-          <!--/.Carousel Wrapper-->
-      </mdb-item-body>
-
-  </mdb-item>
-  <mdb-item [collapsed]="false">
-      <mdb-item-head>
-          <span class="h5">Sản phẩm được xem nhiều nhất</span></mdb-item-head>
-      <mdb-item-body>
-          <!--Carousel Wrapper-->
-          <mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [animation]="'fade'">
-              <!--First slide-->
-              <mdb-slide>
-                  <div class="view">
-                      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide">
-                      <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+    </mdb-carousel>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11"><h5 class="mb-4 font-weight-bold text-primary header">Sản phẩm bán chạy nhất</h5></div>
+    </div>
+    
+    <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation product-phone" [type]="'carousel-multi-item'" [animation]="'slide'">
+      <!--First slide-->
+      <mdb-slide class="">
+          <div class="col-md-1 float-left" ></div>
+          <div class="col-md-2 float-left" *ngFor="let prod of LstBestSell_1">
+            <div class="card">
+                <div class="card-image">
+                   <img class="img-fluid" src="{{prod.Image[0].url}}" alt="Card image cap">
+                </div>
+                <div class="card-body" >
+                    <h6 class="card-title">{{prod.Name}}</h6>
+                    <p class="h6 text-danger">{{prod.Price | currency:'VND':true:'1.0-0'}}</p>
+                    <a (click)="ViewDetail(prod.Code, prod.Type)" >Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 float-left" ></div>
+      </mdb-slide>
+      <!--/First slide-->
+      <!--Second slide-->
+      <mdb-slide>
+          <div class="col-md-1 float-left" ></div>
+          <div class="col-md-2 float-left" *ngFor="let prod of LstBestSell_2">
+              <div class="card">
+                  <div class="card-image">
+                      <img class="img-fluid" src="{{prod.Image[0].url}}" alt="Card image cap" >
                   </div>
-                  <div class="carousel-caption">
-                      <h3 class="h3-responsive">Light mask</h3>
-                      <p>First text</p>
+                  <div class="card-body mt-1" >
+                      <h6 class="card-title">{{prod.Name}}</h6>
+                      <p class="h6 text-danger">{{prod.Price | currency:'VND':true:'1.0-0'}}</p>
+                      <a (click)="ViewDetail(prod.Code, prod.Type)"  >Xem chi tiết</a>
                   </div>
-              </mdb-slide>
-              <!--/First slide-->
-              <!--Second slide-->
-              <mdb-slide>
-                  <div class="view">
-                      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
-                      <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
-                  </div>
-                  <div class="carousel-caption">
-                      <h3 class="h3-responsive">Strong mask</h3>
-                      <p>Secondary text</p>
-                  </div>
-              </mdb-slide>
-              <!--/Second slide-->
-              <!--Third slide-->
-              <mdb-slide>
-                  <div class="view">
-                      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide">
-                      <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
-                  </div>
-                  <div class="carousel-caption">
-                      <h3 class="h3-responsive">Slight mask</h3>
-                      <p>Third text</p>
-                  </div>
-              </mdb-slide>
-              <!--/Third slide-->
-          </mdb-carousel>
-          <!--/.Carousel Wrapper-->
-      </mdb-item-body>
-  </mdb-item>
+              </div> 
+          </div>
+          <div class="col-md-1 float-left" ></div>
+          
+      </mdb-slide>
+    </mdb-carousel>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11"><h5 class="mb-4 font-weight-bold text-primary header">Sản phẩm được xem nhiều nhất</h5></div>
+    </div>
+        
+    <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation product-phone" [type]="'carousel-multi-item'" [animation]="'slide'">
+        <!--First slide-->
+        <mdb-slide class="">
+            <div class="col-md-1 float-left" ></div>
+            <div class="col-md-2 float-left" *ngFor="let prod of LstBestSell_1">
+            <div class="card">
+                <div class="card-image">
+                    <img class="img-fluid" src="{{prod.Image[0].url}}" alt="Card image cap">
+                </div>
+                <div class="card-body" >
+                    <h6 class="card-title">{{prod.Name}}</h6>
+                    <p class="h6 text-danger">{{prod.Price | currency:'VND':true:'1.0-0'}}</p>
+                    <a (click)="ViewDetail(prod.Code, prod.Type)" >Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 float-left" ></div>
+        </mdb-slide>
+        <!--/First slide-->
+        <!--Second slide-->
+        <mdb-slide>
+            <div class="col-md-1 float-left" ></div>
+            <div class="col-md-2 float-left" *ngFor="let prod of LstBestSell_2">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="img-fluid" src="{{prod.Image[0].url}}" alt="Card image cap" >
+                    </div>
+                    <div class="card-body mt-1" >
+                        <h6 class="card-title">{{prod.Name}}</h6>
+                        <p class="h6 text-danger">{{prod.Price | currency:'VND':true:'1.0-0'}}</p>
+                        <a (click)="ViewDetail(prod.Code, prod.Type)"  >Xem chi tiết</a>
+                    </div>
+                </div> 
+            </div>
+            <div class="col-md-1 float-left" ></div>
+            
+        </mdb-slide>
+    </mdb-carousel>
 </mdb-squeezebox>
 <!--/.Accordion wrapper-->
