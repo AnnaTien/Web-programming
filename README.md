@@ -35,17 +35,18 @@
  + Hiển thị danh sách loại sản phẩm 
  + Hiển thị danh sách nhà sản xuất
 
-**6. Đăng nhập**
+**6. Đăng nhập**                    [Nguyễn Ngọc Linh Tiên](https://github.com/AnnaTien)
 
-**7. Đăng ký:**
+**7. Đăng ký:**                     [Nguyễn Ngọc Linh Tiên](https://github.com/AnnaTien)
  + Có sử dụng captcha (khuyến khích dùng Google ReCaptcha)
 
-**8. Page Profile**[Nguyễn Ngọc Linh Tiên](https://github.com/AnnaTien)
+**8. Page Profile**                 [Nguyễn Ngọc Linh Tiên](https://github.com/AnnaTien)
  + profile infor
  + Mua hàng
  + giỏ hàng
  + lịch sử
-**9. Page SA**[Trần Đình Trọng](https://github.com/tdtrong056)
+
+**9. Page SA**                      [Trần Đình Trọng](https://github.com/tdtrong056)
  + Dashboard
  + Quản lý SP, Loại SP, Nhà sản xuất
  + Quản lý đơn hàng
