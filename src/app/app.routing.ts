@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeworkComponent } from './Page/Homework/Homework.component';
 import { RegistrationComponent } from './Page/Registration/Registration.component';
