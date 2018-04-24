@@ -19,6 +19,7 @@ import { TeammemberComponent } from './Page/Teammember/Teammember.component';
 import { PhoneComponent } from './Page/phone/phone.component';
 import { PadComponent } from './Page/pad/pad.component';
 import { ListProductComponent } from './Page/list-product/list-product.component';
+import { AdminComponent } from './Page/admin/admin.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ListProductComponent } from './Page/list-product/list-product.component
         TeammemberComponent,
         PhoneComponent,
         PadComponent,
-        ListProductComponent
+        ListProductComponent,
+        AdminComponent
     ],
     imports: [
         BrowserModule,
