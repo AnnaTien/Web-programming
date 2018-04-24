@@ -27,15 +27,33 @@
         background-color: $primary-color;
         @include border-radius(50%);
     }
+    //Trong
+    // .controls-top {
+    //     text-align: center;
+    //     margin-bottom: 30px;
+    //     .btn-floating {
+    //         background: $primary-color;
+    //     }
+    // }
     .controls-top {
         text-align: center;
         margin-bottom: 30px;
+        margin-top: 7rem;
+        position: absolute;
         .btn-floating {
-            background: $primary-color;
+            background: #6b717f;
+        }
+        .btn-floating:last-child {
+            background: #6b717f;
+            margin-left: 79rem;
         }
     }
+    //Trong
     .carousel-indicators {
         margin-bottom: -2em;
+        //Trong
+        display: none;
+        //Trong
     }
     .card {
         margin: 1px;
@@ -58,6 +76,9 @@
 .carousel-thumbnails {
     margin-bottom: 80px;
     .carousel-indicators {
+        //Trong
+        display: none;
+        //Trong
         margin-bottom: -75px;
         position: absolute;
         li {
@@ -85,6 +106,9 @@
     .carousel-thumbnails {
         margin-bottom: 60px;
         .carousel-indicators {
+            //Trong
+            display: none;
+            //Trong
             margin-bottom: -60px;
             img {
                 max-width: 50px;

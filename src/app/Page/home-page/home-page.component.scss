@@ -1,19 +1,48 @@
-.card{
-    height: 14rem;
-    overflow: hidden;
-    .card-body{
-        opacity: 0;
-        margin-top: -14rem;
-        height: 14rem;
-        background-color: #e4e4e466;
-        padding-top: 3.25rem !important;
+.product-phone{
+    .card{
+        overflow: hidden;
+        .card-body{
+            height: 14rem;
+            .card-title{
+                height: 2rem;;
+            }
+        }
+        .card-image{
+            height: 14rem;
+            overflow: hidden;
+            display: block;
+        }
+        // .card-image:hover{
+        //     height: 30rem;
+        //     img{
+        //         position: absolute;
+        //         transform: scale(2,2);
+        //     }
+        // }
     }
-    .card-body:hover{
-        margin-top: -14rem;
-        height: 14rem;
-        background-color: #e4e4e466;
-        padding-top: 3.25rem !important;
-        opacity: 1;
+    
+}
+
+// .carousel-multi-item {
+    
+// }
+.carousel-multi-item {
+    .controls-top {
+        text-align: center;
+        margin-bottom: 30px;
+        margin-top: 7rem;
+        position: absolute;
+        .btn-floating {
+            background: #6b717f;
+        }
+        .btn-floating:last-child {
+            background: #6b717f;
+            margin-left: 79rem;
+        }
     }
 }
 
+
+.carousel-indicators{
+    display: none;
+}

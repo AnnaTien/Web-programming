@@ -1,7 +1,8 @@
 
 export  const  ListPhone  = [
     {
-        "ID":1, 
+        "ID":1,
+        "Code":"samsung-s9",
         "Name":"Samsung Galaxy S9", 
         "Price":19000000, 
         "Image":[
@@ -33,10 +34,12 @@ export  const  ListPhone  = [
         "Origin":"Samsung Hàn Quốc", 
         "Type":1, 
         "SupplierID": 2,
-        "Supplier":"Samsung"
+        "Supplier":"Samsung",
+        "Promotion": "Trợ giá 1 triệu đồng"
     },
     {
         "ID":2, 
+        "Code":"iphone-8",
         "Name":"iPhone 8", 
         "Price":15000000, 
         "Image":[
@@ -68,10 +71,12 @@ export  const  ListPhone  = [
         "Origin":"Apple Singapore", 
         "Type":1, 
         "SupplierID": 1,
-        "Supplier":"Apple"
+        "Supplier":"Apple",
+        "Promotion": "Trợ giá 1 triệu đồng"
     },
     {
         "ID":3, 
+        "Code":"huawei-3e",
         "Name":"Huawei nova 3e", 
         "Price":6990000, 
         "Image":[
@@ -103,10 +108,12 @@ export  const  ListPhone  = [
         "Origin":"Huawei",
         "Type":1,
         "SupplierID": 6,
-        "Supplier":"Huawei"
+        "Supplier":"Huawei",
+        "Promotion": "Trợ giá 1 triệu đồng"
     },
     {
         "ID":4, 
+        "Code":"samsung-a8plus",
         "Name":"Samsung Galaxy A8+ (2018)", 
         "Price":13490000, 
         "Image":[
@@ -138,10 +145,12 @@ export  const  ListPhone  = [
         "Origin":"Samsung Hàn Quốc", 
         "Type":1, 
         "SupplierID": 2,
-        "Supplier":"Samsung"
+        "Supplier":"Samsung",
+        "Promotion": "Trợ giá 1 triệu đồng"
     },
     {
         "ID":5, 
+        "Code":"sony-xz2",
         "Name":"Sony Xperia XZ2", 
         "Price":19990000, 
         "Image":[
@@ -173,10 +182,12 @@ export  const  ListPhone  = [
         "Origin":"Sony", 
         "Type":1, 
         "SupplierID": 3,
-        "Supplier":"Sony"
+        "Supplier":"Sony",
+        "Promotion": "Trợ giá 1 triệu đồng"
     },
     {
         "ID":6, 
+        "Code":"oppo-f7",
         "Name":"OPPO F7", 
         "Price":9990000, 
         "Image":[
@@ -208,10 +219,12 @@ export  const  ListPhone  = [
         "Origin":"OPPO", 
         "Type":1, 
         "SupplierID": 8,
-        "Supplier":"OPPO"
+        "Supplier":"OPPO",
+        "Promotion": "Trợ giá 1 triệu đồng"
     },
     {
-        "ID":7, 
+        "ID":7,
+        "Code":"xiaomi-mix2", 
         "Name":"Xiaomi Mi MIX 2", 
         "Price":9990000, 
         "Image":[
@@ -243,10 +256,12 @@ export  const  ListPhone  = [
         "Origin":"Xiaomi - Trung Quốc", 
         "Type":1, 
         "SupplierID": 5,
-        "Supplier":"Xiaomi"
+        "Supplier":"Xiaomi",
+        "Promotion": "Trợ giá 1 triệu đồng"
     },
     {
         "ID":8, 
+        "Code":"nokia-8",
         "Name":"Nokia 8", 
         "Price":12990000, 
         "Image":[
@@ -278,10 +293,12 @@ export  const  ListPhone  = [
         "Origin":"Nokia", 
         "Type":1, 
         "SupplierID": 7,
-        "Supplier":"Nokia"
+        "Supplier":"Nokia",
+        "Promotion": "Trợ giá 1 triệu đồng"
     },
     {
-        "ID":9, 
+        "ID":9,
+        "Code":"asus-zen-max-plus-m1", 
         "Name":"ASUS ZenFone Max Plus M1", 
         "Price":5490000, 
         "Image":[
@@ -313,10 +330,12 @@ export  const  ListPhone  = [
         "Origin":"ASUS", 
         "Type":1, 
         "SupplierID": 4,
-        "Supplier":"ASUS"
+        "Supplier":"ASUS",
+        "Promotion": "Trợ giá 1 triệu đồng"
     },
     {
         "ID":10, 
+        "Code":"iphone-x",
         "Name":"iPhone X", 
         "Price":25990000, 
         "Image":[
@@ -348,7 +367,8 @@ export  const  ListPhone  = [
         "Origin":"Apple", 
         "Type":1, 
         "SupplierID": 1,
-        "Supplier":"Apple"
+        "Supplier":"Apple",
+        "Promotion": "Trợ giá 1 triệu đồng"
     }
 ]
 

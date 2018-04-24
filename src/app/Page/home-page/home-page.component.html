@@ -11,130 +11,45 @@
 
       </mdb-item-body>
   </mdb-item>
-  <span class="h5"> Sản phẩm mới nhất</span>
-  <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation" [type]="'carousel-multi-item'" [animation]="'slide'">
+  <h5 class="mb-2"> Sản phẩm mới nhất</h5>
+  <mdb-carousel [isControls]="true" class="carousel-multi-item multi-animation product-phone" [type]="'carousel-multi-item'" [animation]="'slide'">
     <!--First slide-->
-    <mdb-slide>
-      <div class="col-md-2 float-left" *ngFor="let phone of lstPhoneBestSell_1">
+    <mdb-slide class="">
+        <div class="col-md-1 float-left" ></div>
+        <div class="col-md-2 float-left" *ngFor="let prod of lstPhoneBestSell_1">
           <div class="card">
-              <img class="img-fluid" src="{{phone.Image[0].url}}" alt="Card image cap">
+              <div class="card-image">
+                 <img class="img-fluid" src="{{prod.Image[0].url}}" alt="Card image cap">
+              </div>
               <div class="card-body" >
-                  <h6 class="card-title">{{phone.Name}}</h6>
-                  <p class="text-danger">{{phone.Price | currency:'VND':true:'1.0-0'}}</p>
-                  <a href="#" >Xem chi tiết</a>
+                  <h6 class="card-title">{{prod.Name}}</h6>
+                  <p class="h6 text-danger">{{prod.Price | currency:'VND':true:'1.0-0'}}</p>
+                  <a (click)="ViewDetail(prod.Code, prod.Type)" >Xem chi tiết</a>
               </div>
           </div>
       </div>
-        <!-- <div class="col-md-4">
-            <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-                </div>
-            </div>
-        </div> -->
+      <div class="col-md-1 float-left" ></div>
     </mdb-slide>
     <!--/First slide-->
     <!--Second slide-->
     <mdb-slide>
-        <div class="col-md-2 float-left" *ngFor="let phone of lstPhoneBestSell_2">
+        <div class="col-md-1 float-left" ></div>
+        <div class="col-md-2 float-left" *ngFor="let prod of lstPhoneBestSell_2">
             <div class="card">
-                <img class="img-fluid" src="{{phone.Image[0].url}}" alt="Card image cap" >
-                <div class="card-body" >
-                    <h6 class="card-title">{{phone.Name}}</h6>
-                    <p class="text-danger">{{phone.Price | currency:'VND':true:'1.0-0'}}</p>
-                    <a href="#" >Xem chi tiết</a>
+                <div class="card-image">
+                    <img class="img-fluid" src="{{prod.Image[0].url}}" alt="Card image cap" >
                 </div>
-            </div>
+                <div class="card-body mt-1" >
+                    <h6 class="card-title">{{prod.Name}}</h6>
+                    <p class="h6 text-danger">{{prod.Price | currency:'VND':true:'1.0-0'}}</p>
+                    <a (click)="ViewDetail(prod.Code, prod.Type)"  >Xem chi tiết</a>
+                </div>
+            </div> 
         </div>
-        <!-- <div class="col-md-4">
-            <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(60).jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(47).jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(48).jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-                </div>
-            </div>
-        </div> -->
+        <div class="col-md-1 float-left" ></div>
+        
     </mdb-slide>
     <!--/Second slide-->
-    <!--Third slide-->
-    <!-- <mdb-slide>
-        <div class="col-md-4">
-            <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(53).jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(45).jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 clearfix d-none d-md-block">
-            <div class="card">
-                <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(51).jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary waves-light" mdbWavesEffect>Button</a>
-                </div>
-            </div>
-        </div>
-    </mdb-slide> -->
-    <!--/Third slide-->
 </mdb-carousel>
   <mdb-item [collapsed]="false">
 

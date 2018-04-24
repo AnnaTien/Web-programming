@@ -16,6 +16,8 @@ import { FooterComponent } from './modules/Footer/Footer.component';
 import { HomeworkComponent } from './Page/Homework/Homework.component';
 import { RegistrationComponent } from './Page/Registration/Registration.component';
 import { TeammemberComponent } from './Page/Teammember/Teammember.component';
+import { PhoneComponent } from './Page/phone/phone.component';
+import { PadComponent } from './Page/pad/pad.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { TeammemberComponent } from './Page/Teammember/Teammember.component';
         HomeworkComponent,
         HomePageComponent,
         RegistrationComponent,
-        TeammemberComponent
+        TeammemberComponent,
+        PhoneComponent,
+        PadComponent
     ],
     imports: [
         BrowserModule,
