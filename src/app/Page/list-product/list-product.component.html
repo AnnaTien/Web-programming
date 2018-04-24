@@ -1,6 +1,33 @@
 
+
 <div class="row">
-    <div class="col-md-1 float-left" ></div>
+    <div class="col-md-2 float-left" >
+        <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
+            <!-- Collapsible link -->
+            <mdb-item>
+                <mdb-item-head mdbRippleRadius>
+                <i class="fa fa-globe"></i>ĐIỆN THOẠI</mdb-item-head>
+                <mdb-item-body>
+                <ul>
+                    <li *ngFor = "let suppl of LstSupplier">
+                    <a  class="waves-effect" mdbRippleRadius >{{suppl.Name}}</a>
+                    </li>                  
+                </ul>
+                </mdb-item-body>
+            </mdb-item>
+            <mdb-item>
+                <mdb-item-head mdbRippleRadius>
+                <i class="fa fa-globe"></i>MÁY TÍNH BẢNG</mdb-item-head>
+                <mdb-item-body>
+                <ul>
+                    <li *ngFor = "let suppl of LstSupplier">
+                    <a  class="waves-effect" mdbRippleRadius>{{suppl.Name}}</a>
+                    </li>                  
+                </ul>
+                </mdb-item-body>
+            </mdb-item>
+        </mdb-squeezebox>
+    </div>
     <div class="col-md-10">
         <div class="row product-phone">
             <div class="col-md-2 float-left" *ngFor="let prod of LstProduct">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForOf, CurrencyPipe} from '@angular/common'
 import {  Supplier, Products, Type } from '../models/dataSample';
 import { Router } from '@angular/router';
 
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-product.component.scss']
 })
 export class ListProductComponent implements OnInit {
+  data: any = Products;
   LstProduct: any = Products;
   LstSupplier: any = Supplier;
   LstType: any = Type;
