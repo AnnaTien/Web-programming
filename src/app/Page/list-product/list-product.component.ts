@@ -27,4 +27,26 @@ export class ListProductComponent implements OnInit {
     }
   }
 
+  SearchBySupplier(type, supplier){
+    if(type){
+      if(supplier){
+        this.LstProduct = [];
+        this.LstProduct = this.data.filter(rec=>rec.Type == type && rec.SupplierID == supplier)
+      }
+      else{
+        this.LstProduct = [];
+        this.LstProduct = this.data.filter(rec=>rec.Type == type)
+      }
+    }
+    else{
+      if(supplier){
+        this.LstProduct = [];
+        this.LstProduct = this.data.filter(rec=>rec.SupplierID == supplier)
+      }
+      else{
+        this.LstProduct = [];
+        this.LstProduct = this.data
+      }
+    }
+  }
 }

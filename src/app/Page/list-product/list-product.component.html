@@ -5,26 +5,24 @@
         <mdb-squeezebox [multiple]="false" aria-multiselectable="false">
             <!-- Collapsible link -->
             <mdb-item>
-                <mdb-item-head mdbRippleRadius>
-                <i class="fa fa-globe"></i>ĐIỆN THOẠI</mdb-item-head>
+                <mdb-item-head mdbRippleRadius (click)="SearchBySupplier(1)">Điện thoại</mdb-item-head>
                 <mdb-item-body>
-                <ul>
-                    <li *ngFor = "let suppl of LstSupplier">
-                    <a  class="waves-effect" mdbRippleRadius >{{suppl.Name}}</a>
-                    </li>                  
-                </ul>
+                    <div *ngFor = "let suppl of LstSupplier">
+                        <a  class="waves-effect h6" mdbRippleRadius (click)="SearchBySupplier(1, suppl.ID)">{{suppl.Name}}</a>
+                    </div> 
                 </mdb-item-body>
             </mdb-item>
             <mdb-item>
-                <mdb-item-head mdbRippleRadius>
-                <i class="fa fa-globe"></i>MÁY TÍNH BẢNG</mdb-item-head>
+                <mdb-item-head mdbRippleRadius (click)="SearchBySupplier(2)">Máy tính bảng</mdb-item-head>
                 <mdb-item-body>
-                <ul>
-                    <li *ngFor = "let suppl of LstSupplier">
-                    <a  class="waves-effect" mdbRippleRadius>{{suppl.Name}}</a>
-                    </li>                  
-                </ul>
+                    <div *ngFor = "let suppl of LstSupplier">
+                        <a  class="waves-effect h6" mdbRippleRadius (click)="SearchBySupplier(2, suppl.ID)">{{suppl.Name}}</a>
+                    </div>                  
                 </mdb-item-body>
+            </mdb-item>
+            <mdb-item *ngFor = "let suppl of LstSupplier">
+                <mdb-item-head mdbRippleRadius (click)="SearchBySupplier(null, suppl.ID)">{{suppl.Name}}</mdb-item-head>
+                <mdb-item-body></mdb-item-body>
             </mdb-item>
         </mdb-squeezebox>
     </div>
