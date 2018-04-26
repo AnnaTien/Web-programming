@@ -32,7 +32,8 @@ export  const  Products  = [
             "Note":"Chính hãng"
         },
         "Origin":"Samsung Hàn Quốc", 
-        "Type":1, 
+        "Type":1,         
+        "TypeName":"Điện thoại", 
         "SupplierID": 2,
         "Supplier":"Samsung",
         "Promotion": "Trợ giá 1 triệu đồng"
@@ -69,7 +70,8 @@ export  const  Products  = [
             "Note":"Chính hãng"
         },
         "Origin":"Apple Singapore", 
-        "Type":1, 
+        "Type":1,          
+        "TypeName":"Điện thoại", 
         "SupplierID": 1,
         "Supplier":"Apple",
         "Promotion": "Trợ giá 1 triệu đồng"
@@ -106,7 +108,8 @@ export  const  Products  = [
             "Note":"Chính hãng"
         }, 
         "Origin":"Huawei",
-        "Type":1,
+        "Type":1,          
+        "TypeName":"Điện thoại",
         "SupplierID": 6,
         "Supplier":"Huawei",
         "Promotion": "Trợ giá 1 triệu đồng"
@@ -143,7 +146,8 @@ export  const  Products  = [
             "Note":"Chính hãng"
         },
         "Origin":"Samsung Hàn Quốc", 
-        "Type":1, 
+        "Type":1,          
+        "TypeName":"Điện thoại", 
         "SupplierID": 2,
         "Supplier":"Samsung",
         "Promotion": "Trợ giá 1 triệu đồng"
@@ -180,7 +184,8 @@ export  const  Products  = [
             "Note":"Chính hãng"
         },
         "Origin":"Sony", 
-        "Type":1, 
+        "Type":1,          
+        "TypeName":"Điện thoại", 
         "SupplierID": 3,
         "Supplier":"Sony",
         "Promotion": "Trợ giá 1 triệu đồng"
@@ -217,7 +222,8 @@ export  const  Products  = [
             "Note":"Chính hãng"
         },
         "Origin":"OPPO", 
-        "Type":1, 
+        "Type":1,          
+        "TypeName":"Điện thoại", 
         "SupplierID": 8,
         "Supplier":"OPPO",
         "Promotion": "Trợ giá 1 triệu đồng"
@@ -254,7 +260,8 @@ export  const  Products  = [
             "Note":"Chính hãng"
         },
         "Origin":"Xiaomi - Trung Quốc", 
-        "Type":1, 
+        "Type":1,          
+        "TypeName":"Điện thoại", 
         "SupplierID": 5,
         "Supplier":"Xiaomi",
         "Promotion": "Trợ giá 1 triệu đồng"
@@ -291,7 +298,8 @@ export  const  Products  = [
             "Note":"Chính hãng"
         },
         "Origin":"Nokia", 
-        "Type":1, 
+        "Type":1,          
+        "TypeName":"Điện thoại", 
         "SupplierID": 7,
         "Supplier":"Nokia",
         "Promotion": "Trợ giá 1 triệu đồng"
@@ -328,7 +336,8 @@ export  const  Products  = [
             "Note":"Chính hãng"
         },
         "Origin":"ASUS", 
-        "Type":1, 
+        "Type":1,          
+        "TypeName":"Điện thoại", 
         "SupplierID": 4,
         "Supplier":"ASUS",
         "Promotion": "Trợ giá 1 triệu đồng"
@@ -365,7 +374,8 @@ export  const  Products  = [
             "Note":"Chính hãng"
         }, 
         "Origin":"Apple", 
-        "Type":1, 
+        "Type":1,
+        "TypeName":"Điện thoại",
         "SupplierID": 1,
         "Supplier":"Apple",
         "Promotion": "Trợ giá 1 triệu đồng"
@@ -398,6 +408,7 @@ export  const  Products  = [
         }, 
         "Origin":"Apple Singapore", 
         "Type":2, 
+        "TypeName": "Máy tính bảng",
         "SupplierID": 1,
         "Supplier":"Apple"
     }
