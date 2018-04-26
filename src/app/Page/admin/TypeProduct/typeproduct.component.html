@@ -1,0 +1,16 @@
+<table>
+        <tr>
+            <th style="width:3rem;">ID</th>
+            <th>Tên Loại sản phẩm</th>
+            <th>Thao tác</th>
+        </tr>
+        <tr *ngFor="let type of LstType"> 
+            <td style="width:3rem;"><input [(ngModel)]="type.ID" style="width:3rem;"></td>
+            <td><input [(ngModel)]="type.Name"></td>
+            <td>
+                <button class="btn btn-success">Cập nhật</button>
+                <button class="btn btn-danger">Xóa</button>
+            </td>
+        </tr>
+    
+    </table>

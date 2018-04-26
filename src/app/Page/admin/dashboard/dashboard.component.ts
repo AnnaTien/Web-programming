@@ -5,8 +5,8 @@ import { Router } from '@angular/router';
 
 @Injectable()
 @Component({
-    selector: 'app-admin',
-    templateUrl: './admin.component.html',
+    selector: 'app-admin-dashboard',
+    templateUrl: './dashboard.component.html',
     styleUrls:['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
@@ -15,6 +15,9 @@ export class DashboardComponent implements OnInit {
 
     }
     ngOnInit(){
+
+    }
+    ViewDetail(id){
 
     }
 }

@@ -20,6 +20,9 @@ import { PhoneComponent } from './Page/phone/phone.component';
 import { PadComponent } from './Page/pad/pad.component';
 import { ListProductComponent } from './Page/list-product/list-product.component';
 import { AdminComponent } from './Page/admin/admin.component';
+import { DashboardComponent } from './Page/admin/dashboard/dashboard.component';
+import { ProductComponent } from './Page/admin/product/product.component';
+import { TypeProductComponent } from './Page/admin/TypeProduct/typeproduct.component';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { AdminComponent } from './Page/admin/admin.component';
         PhoneComponent,
         PadComponent,
         ListProductComponent,
-        AdminComponent
+        AdminComponent,
+        DashboardComponent,
+        ProductComponent,
+        TypeProductComponent
     ],
     imports: [
         BrowserModule,
