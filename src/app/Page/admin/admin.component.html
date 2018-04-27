@@ -1,2 +1,44 @@
-<router-outlet></router-outlet>
+
+<div class="row">
+        <div class="col-md-2">
+            <a role="button" (click)="ViewDetail(1)">
+                <div class="card " >
+                    <div class="card-body" >
+                        <h6 class="card-title">Quản Lý Sản Phẩm</h6>
+                    </div>
+                </div>
+            </a>
+            <a role="button" (click)="ViewDetail(2)">
+                <div class="card " >
+                    <div class="card-body" >
+                        <h6 class="card-title">Quản Lý Loại Sản Phẩm</h6>
+                    </div>
+                </div>
+            </a>
+            <a role="button" (click)="ViewDetail(3)">
+                <div class="card " >
+                    <div class="card-body" >
+                        <h6 class="card-title">Quản Lý Nhà Sản Xuất</h6>
+                    </div>
+                </div>
+            </a>
+            <a role="button" (click)="ViewDetail(4)" >
+                <div class="card " >
+                    <div class="card-body" >
+                        <h6 class="card-title">Quản Lý Đơn Hàng</h6>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <div class="col-10">
+        <app-admin-product [hidden]="CurAcctive != func.product"></app-admin-product>
+        <app-admin-categories [hidden]="CurAcctive != func.categories"></app-admin-categories>
+        <app-bill-manager [hidden]="CurAcctive != func.bill"></app-bill-manager>
+        <app-supplier [hidden]="CurAcctive != func.supplier"></app-supplier>
+    </div> 
+</div>
+<div class="admin-body">
+    
+</div>
+
 

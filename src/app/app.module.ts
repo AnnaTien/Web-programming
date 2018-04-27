@@ -20,9 +20,10 @@ import { PhoneComponent } from './Page/phone/phone.component';
 import { PadComponent } from './Page/pad/pad.component';
 import { ListProductComponent } from './Page/list-product/list-product.component';
 import { AdminComponent } from './Page/admin/admin.component';
-import { DashboardComponent } from './Page/admin/dashboard/dashboard.component';
 import { ProductComponent } from './Page/admin/product/product.component';
-import { TypeProductComponent } from './Page/admin/TypeProduct/typeproduct.component';
+import { CategoriesComponent } from './Page/admin/categories/categories.component';
+import { SupplierComponent } from './Page/admin/supplier/supplier.component';
+import { BillManagerComponent } from './Page/admin/bill-manager/bill-manager.component';
 
 
 @NgModule({
@@ -38,9 +39,10 @@ import { TypeProductComponent } from './Page/admin/TypeProduct/typeproduct.compo
         PadComponent,
         ListProductComponent,
         AdminComponent,
-        DashboardComponent,
         ProductComponent,
-        TypeProductComponent
+        CategoriesComponent,
+        SupplierComponent,
+        BillManagerComponent
     ],
     imports: [
         BrowserModule,

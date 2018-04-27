@@ -10,7 +10,7 @@ import { ListProductComponent } from './Page/list-product/list-product.component
 import { AdminComponent } from './Page/admin/admin.component';
 import { DashboardComponent } from './Page/admin/dashboard/dashboard.component';
 import { ProductComponent } from './Page/admin/product/product.component';
-import { TypeProductComponent } from './Page/admin/TypeProduct/typeproduct.component';
+import { CategoriesComponent } from './Page/admin/categories/categories.component';
 const routes: Routes = [
     { path: '', redirectTo: 'homepage', pathMatch: 'full' },
     { path: 'homepage', component: HomePageComponent },
@@ -19,13 +19,13 @@ const routes: Routes = [
     { path: 'phone/:phonecode', component: PhoneComponent },
     { path: 'pad', component: PadComponent },
     {   path: "admin",
-        component: AdminComponent,
-        children:[
-        { path:'', redirectTo: 'dashboard', pathMatch: 'full' },
-        { path:'dashboard', component:DashboardComponent},
-        {path:'product', component:ProductComponent},
-        {path:'typeproduct', component: TypeProductComponent}
-        ] 
+        component: AdminComponent//,
+        // children:[
+        // { path:'', redirectTo: 'dashboard', pathMatch: 'full' },
+        // { path:'dashboard', component:DashboardComponent},
+        // {path:'product', component:ProductComponent},
+        // {path:'categories', component: CategoriesComponent}
+        // ] 
     },
     { path: 'pad/:padcode', component: PadComponent },
     { path: 'registration', component: RegistrationComponent },
