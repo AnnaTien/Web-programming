@@ -56,22 +56,22 @@ export class HeaderComponent {
     //     var urlPre = 'https://mdbootstrap.com';
     //     var windowChild = window.open(urlPre, "windowChild");
     // }
-    // facebook() {
-    //     var urlPre = 'https://vi-vn.facebook.com';
-    //     var windowChild = window.open(urlPre, "windowChild");
-    // }
-    // pinterest() {
-    //     var urlPre = 'https://www.pinterest.com';
-    //     var windowChild = window.open(urlPre, "windowChild");
-    // }
-    // googleplus() {
-    //     var urlPre = 'https://plus.google.com';
-    //     var windowChild = window.open(urlPre, "windowChild");
-    // }
-    // twitter() {
-    //     var urlPre = 'https://twitter.com';
-    //     var windowChild = window.open(urlPre, "windowChild");
-    // }
+    facebook() {
+        var urlPre = 'https://vi-vn.facebook.com';
+        var windowChild = window.open(urlPre, "windowChild");
+    }
+    pinterest() {
+        var urlPre = 'https://www.pinterest.com';
+        var windowChild = window.open(urlPre, "windowChild");
+    }
+    googleplus() {
+        var urlPre = 'https://plus.google.com';
+        var windowChild = window.open(urlPre, "windowChild");
+    }
+    twitter() {
+        var urlPre = 'https://twitter.com';
+        var windowChild = window.open(urlPre, "windowChild");
+    }
 
 
 }
