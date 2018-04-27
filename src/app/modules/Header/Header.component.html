@@ -51,26 +51,28 @@
             <!-- Collapsible link -->
             <mdb-item>
               <mdb-item-head mdbRippleRadius>
-                <i class="fa fa-globe"></i>ĐIỆN THOẠI</mdb-item-head>
+                <i class="fa fa-globe"></i>Loại
+              </mdb-item-head>
               <mdb-item-body>
                 <ul>
-                  <li>
-                    <a  class="waves-effect" mdbRippleRadius>iPhone (Apple)</a>
-                  </li>                  
+                  <li *ngFor="let Categorie of _Categories; let i=index">
+                    <a class="waves-effect" mdbRippleRadius [routerLink]="['/showphone']" [queryParams]="{CategorieID: Categorie.CategorieID}">{{Categorie.CategorieName}}</a>
+                  </li>
                 </ul>
               </mdb-item-body>
             </mdb-item>
             <mdb-item>
-              <mdb-item-head mdbRippleRadius>
-                <i class="fa fa-globe"></i>MÁY TÍNH BẢNG</mdb-item-head>
-              <mdb-item-body>
-                <ul>
-                  <li>
-                    <a  class="waves-effect" mdbRippleRadius>iPad (Apple)</a>
-                  </li>                  
-                </ul>
-              </mdb-item-body>
-            </mdb-item>
+                <mdb-item-head mdbRippleRadius>
+                  <i class="fa fa-globe"></i>Nhà sản xuất
+                </mdb-item-head>
+                <mdb-item-body>
+                  <ul>
+                    <li *ngFor="let Suppliers of _Suppliers; let i=index">
+                      <a class="waves-effect" mdbRippleRadius [routerLink]="['/showphone']" [queryParams]="{suppliersID: Suppliers.SuppliersID}">{{Suppliers.Suppliersnames}}</a>
+                    </li>
+                  </ul>
+                </mdb-item-body>
+              </mdb-item>
           </mdb-squeezebox>
         </ul>
       </li>
@@ -107,13 +109,13 @@
             <i class="fa fa-home"></i>
             <span class="clearfix d-none d-sm-inline-block">Home</span>
           </a>
-        </li>  
+        </li>
         <li class="nav-item">
           <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/teammember']">
             <i class="fa fa-home"></i>
             <span class="clearfix d-none d-sm-inline-block">About us</span>
           </a>
-        </li>     
+        </li>
         <li class="nav-item">
           <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/homework']">
             <i class="fa fa-file"></i>
@@ -248,4 +250,3 @@
   </div>
 </div>
 <!--Modal: Login Form-->
-
