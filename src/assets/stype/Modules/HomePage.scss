@@ -1,21 +1,68 @@
 
-
 .home-page {
-    .home-panner {
-        .container {
-            position: absolute;
-            top: 110px;
-        }
-    }
-    .home-page-content {
-        margin-top: 0px;
-        .process-box {
-            height: 220px;
-        }
-    }
+    .card .rating {
+        color: #ffa000;
+	}
+	.card {
+		.rating {
+			list-style-type: none;
+			padding: 0;
+			.fa {
+		 padding-left: 0rem !important;
+		 padding-right: 0rem !important;
+			}
+		}
+	}
+	.view{
+		align-self: center;
+	}
 }
 .homepage{
     height: 500px;
+}
+.detailproduct{
+	.card .rating {
+        color: #ffa000;
+	}
+	.card {
+		.rating {
+			list-style-type: none;
+			padding: 0;
+			.fa {
+		 padding-left: 0rem !important;
+		 padding-right: 0rem !important;
+			}
+		}
+	}
+	.img-center{
+		text-align: right;
+	}
+	.tableparameter {
+		display: block;
+		overflow: visible;
+	}
+	.parameter {
+		display: block;
+		position: relative;
+		overflow: hidden;
+		background: #fff;
+		padding-top: 10px;
+	}
+	.parameter li {
+		display: table;
+		background: #fff;
+		width: 100%;
+		border-top: 1px solid #eee;
+		padding: 5px 0;
+	}
+	.parameter li span {
+		display: table-cell;
+		width: 40%;
+		vertical-align: top;
+		padding: 5px 0;
+		font-size: 14px;
+		color: #666;
+	}
 }
 .tdtrong {
 	.section {
