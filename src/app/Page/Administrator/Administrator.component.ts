@@ -5,6 +5,7 @@ import { ProductsComponent } from './Products/Products.component';
 import { CategoriesComponent } from './Categories/Categories.component';
 import { SuppliersComponent } from './Suppliers/Suppliers.component';
 import { BillsComponent } from './Bills/Bills.component';
+import { AcessDeniedComponent } from '../AcessDenied/AcessDenied.component';
 
 @Injectable()
 @Component({
@@ -18,8 +19,11 @@ export class AdministratorComponent implements OnInit {
     @ViewChild(SuppliersComponent) supplier: SuppliersComponent;
     @ViewChild(BillsComponent) bill: BillsComponent;
     CurAcctive = 1;
-    constructor(){
-
+    Account: any = {}
+    constructor(private router: Router){
+        this.Account = this.getCookie('AccountID');
+        if(this.Account.Role != 1)
+        this.router.navigate(["/", 'acessdenied']);
     }
 
     func = {
@@ -31,6 +35,10 @@ export class AdministratorComponent implements OnInit {
     ngOnInit(){
 
     }
+    getCookie(name){
+        return {AccountID:1, Role:1}
+    }
+
     ViewDetail(id){
         this.CurAcctive = id;
     }

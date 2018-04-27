@@ -7,6 +7,7 @@ import { HomePageComponent } from './page/HomePage/HomePage.component';
 import { DetailphoneComponent } from './Page/Detailphone/Detailphone.component';
 import { ShowphoneComponent } from './Page/Showphone/Showphone.component';
 import { AdministratorComponent } from './Page/Administrator/Administrator.component';
+import { AcessDeniedComponent } from './Page/AcessDenied/AcessDenied.component';
 const routes: Routes = [
     { path: '', redirectTo: 'homepage', pathMatch: 'full' },
     { path: 'homepage', component: HomePageComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
     { path: 'teammember', component: TeammemberComponent },
     { path: 'detailphone', component: DetailphoneComponent },
     { path: 'showphone', component: ShowphoneComponent },
-    {path:'admin', component: AdministratorComponent}
+    {path:'admin', component: AdministratorComponent},
+    {path:'acessdenied', component: AcessDeniedComponent}
     ];
 
 export const Routing = RouterModule.forRoot(routes, { useHash: true });

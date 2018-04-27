@@ -23,6 +23,7 @@ import { ProductsComponent } from './Page/Administrator/Products/Products.compon
 import { SuppliersComponent } from './Page/Administrator/Suppliers/Suppliers.component';
 import { CategoriesComponent } from './Page/Administrator/Categories/Categories.component';
 import { BillsComponent } from './Page/Administrator/Bills/Bills.component';
+import { AcessDeniedComponent } from './Page/AcessDenied/AcessDenied.component';
 
 
 
@@ -41,7 +42,8 @@ import { BillsComponent } from './Page/Administrator/Bills/Bills.component';
         ProductsComponent,
         SuppliersComponent,
         CategoriesComponent,
-        BillsComponent
+        BillsComponent,
+        AcessDeniedComponent
     ],
     imports: [
         BrowserModule,
