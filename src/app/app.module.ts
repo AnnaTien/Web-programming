@@ -5,7 +5,6 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Routing } from "./app.routing";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from "@angular/http";
-import { HomePageComponent } from './Page/home-page/home-page.component';
 import { HttpClient } from "@angular/common/http";
 import { HttpClientModule } from "@angular/common/http";
 import { MDBBootstrapModule } from './typescripts/free/index';
@@ -16,33 +15,33 @@ import { FooterComponent } from './modules/Footer/Footer.component';
 import { HomeworkComponent } from './Page/Homework/Homework.component';
 import { RegistrationComponent } from './Page/Registration/Registration.component';
 import { TeammemberComponent } from './Page/Teammember/Teammember.component';
-import { PhoneComponent } from './Page/phone/phone.component';
-import { PadComponent } from './Page/pad/pad.component';
-import { ListProductComponent } from './Page/list-product/list-product.component';
-import { AdminComponent } from './Page/admin/admin.component';
-import { ProductComponent } from './Page/admin/product/product.component';
-import { CategoriesComponent } from './Page/admin/categories/categories.component';
-import { SupplierComponent } from './Page/admin/supplier/supplier.component';
-import { BillManagerComponent } from './Page/admin/bill-manager/bill-manager.component';
+import { HomePageComponent } from './page/HomePage/HomePage.component';
+import { DetailphoneComponent } from './Page/Detailphone/Detailphone.component';
+import { ShowphoneComponent } from './Page/Showphone/Showphone.component';
+import { AdministratorComponent } from './Page/Administrator/Administrator.component';
+import { ProductsComponent } from './Page/Administrator/Products/Products.component';
+import { SuppliersComponent } from './Page/Administrator/Suppliers/Suppliers.component';
+import { CategoriesComponent } from './Page/Administrator/Categories/Categories.component';
+import { BillsComponent } from './Page/Administrator/Bills/Bills.component';
+
 
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        FooterComponent, 
+        FooterComponent,
         HomeworkComponent,
         HomePageComponent,
         RegistrationComponent,
         TeammemberComponent,
-        PhoneComponent,
-        PadComponent,
-        ListProductComponent,
-        AdminComponent,
-        ProductComponent,
+        DetailphoneComponent,
+        ShowphoneComponent,
+        AdministratorComponent,
+        ProductsComponent,
+        SuppliersComponent,
         CategoriesComponent,
-        SupplierComponent,
-        BillManagerComponent
+        BillsComponent
     ],
     imports: [
         BrowserModule,
