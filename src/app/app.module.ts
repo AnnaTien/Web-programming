@@ -18,6 +18,12 @@ import { TeammemberComponent } from './Page/Teammember/Teammember.component';
 import { HomePageComponent } from './page/HomePage/HomePage.component';
 import { DetailphoneComponent } from './Page/Detailphone/Detailphone.component';
 import { ShowphoneComponent } from './Page/Showphone/Showphone.component';
+import { AdministratorComponent } from './Page/Administrator/Administrator.component';
+import { ProductsComponent } from './Page/Administrator/Products/Products.component';
+import { SuppliersComponent } from './Page/Administrator/Suppliers/Suppliers.component';
+import { CategoriesComponent } from './Page/Administrator/Categories/Categories.component';
+import { BillsComponent } from './Page/Administrator/Bills/Bills.component';
+import { AcessDeniedComponent } from './Page/AcessDenied/AcessDenied.component';
 
 
 
@@ -31,7 +37,13 @@ import { ShowphoneComponent } from './Page/Showphone/Showphone.component';
         RegistrationComponent,
         TeammemberComponent,
         DetailphoneComponent,
-        ShowphoneComponent
+        ShowphoneComponent,
+        AdministratorComponent,
+        ProductsComponent,
+        SuppliersComponent,
+        CategoriesComponent,
+        BillsComponent,
+        AcessDeniedComponent
     ],
     imports: [
         BrowserModule,
