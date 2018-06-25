@@ -54,25 +54,25 @@
                 <i class="fa fa-globe"></i>Loại
               </mdb-item-head>
               <mdb-item-body>
-                <ul>
-                  <li *ngFor="let Categorie of _Categories; let i=index">
-                    <a class="waves-effect" mdbRippleRadius [routerLink]="['/showphone']" [queryParams]="{CategorieID: Categorie.CategorieID}">{{Categorie.CategorieName}}</a>
+                <ul *ngIf="lcatalog">
+                  <li *ngFor="let catalog of lcatalog; let i=index">
+                    <a class="waves-effect" mdbRippleRadius [routerLink]="['/showphone']" [queryParams]="{catalog_id: catalog.catalog_id}">{{catalog.catalog_name}}</a>
                   </li>
                 </ul>
               </mdb-item-body>
             </mdb-item>
             <mdb-item>
-                <mdb-item-head mdbRippleRadius>
-                  <i class="fa fa-globe"></i>Nhà sản xuất
-                </mdb-item-head>
-                <mdb-item-body>
-                  <ul>
-                    <li *ngFor="let Suppliers of _Suppliers; let i=index">
-                      <a class="waves-effect" mdbRippleRadius [routerLink]="['/showphone']" [queryParams]="{suppliersID: Suppliers.SuppliersID}">{{Suppliers.Suppliersnames}}</a>
-                    </li>
-                  </ul>
-                </mdb-item-body>
-              </mdb-item>
+              <mdb-item-head mdbRippleRadius>
+                <i class="fa fa-globe"></i>Nhà sản xuất
+              </mdb-item-head>
+              <mdb-item-body>
+                <ul *ngIf="lcompany">
+                  <li *ngFor="let company of lcompany; let i=index">
+                    <a class="waves-effect" mdbRippleRadius [routerLink]="['/showphone']" [queryParams]="{company_id: company.company_id}">{{company.company_name}}</a>
+                  </li>
+                </ul>
+              </mdb-item-body>
+            </mdb-item>
           </mdb-squeezebox>
         </ul>
       </li>
@@ -136,11 +136,11 @@
           </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link waves-light"  mdbRippleRadius [routerLink]="['/registration']">
-              <i class="fa fa-registered"></i>
-              <span class="clearfix d-none d-sm-inline-block">registered</span>
-            </a>
-          </li>
+          <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/registration']">
+            <i class="fa fa-registered"></i>
+            <span class="clearfix d-none d-sm-inline-block">registered</span>
+          </a>
+        </li>
       </ul>
     </navlinks>
   </mdb-navbar>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppApi } from '../../app.api'
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: "eportal-header",
@@ -10,19 +11,32 @@ import { AppApi } from '../../app.api'
 export class HeaderComponent {
     AppApi: AppApi = new AppApi();
     _Categories = this.AppApi.Categories;
-    _Suppliers=this.AppApi.Suppliers;
+    _Suppliers = this.AppApi.Suppliers;
     newest = this.AppApi.Products;
     buyest = this.AppApi.Products;
     viewest = this.AppApi.Products;
 
-
-    constructor() {
+    lcatalog: any = null;
+    lcompany: any = null;
+    constructor(private http: HttpClient) {
 
     }
     iconsSelect: Array<any>;
 
     ngOnInit() {
-        console.log("api", this._Categories);
+        this.http.get("http://127.0.0.1:3000/api/catalog").subscribe(data => {
+            if (data) {
+                this.lcatalog = data;
+                console.log("lcatalog", this.lcatalog);
+            }
+
+        });
+        this.http.get("http://127.0.0.1:3000/api/company").subscribe(data => {
+            if (data) {
+                this.lcompany = data;
+                console.log("lcompany", this.lcompany);
+            }
+        });
     }
     // hcmus() {
     //     var urlPre = 'https://www.hcmus.edu.vn';
