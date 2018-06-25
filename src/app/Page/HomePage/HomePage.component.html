@@ -1,183 +1,181 @@
 <div class="home-page container-fuild px-5">
-    <div class="row">
+  <div class="row">
+    <div class="col-12">
+      <div class="row m-0 p-0">
         <div class="col-12">
-            <div class="row m-0 p-0">
-                <div class="col-12">
-                    <h4>Sản Phẩm mới nhất</h4>
-                </div>
-                <div class="col-3 py-3 px-4" *ngFor="let newest of _newest let i=index">
-                    <div class="card pt-3" *ngIf="i<10">
-                        <div class="view overlay waves-light center" mdbWavesEffect>
-                            <a [routerLink]="['/detailphone']" [queryParams]="{productID: newest.ProductID}">
-                                <img class="center" width="180" height="180" src="./assets/img/{{newest.Picture}}" alt="">
-                            </a>
-
-                        </div>
-
-                        <div class="card-body">
-                            <h5 class="card-title">{{newest.ProductName}}
-                            </h5>
-                            <ul class="rating">
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star-o"></i>
-                                </li>
-                                <li class="font-12 text-muted">(53 Nhận xét)</li>
-                            </ul>
-                            <p class="price-sale">
-                                <span class="final-price">{{newest.Price}}</span>
-                                <span class="price-regular">{{newest.Price}}</span>
-                                <span class="sale-tag sale-tag-square">-23%</span>
-                            </p>
-                        </div>
-                        <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect>
-                            <i class="fa fa-shopping-cart pl-1 waves-light" mdbWavesEffect></i>
-                        </a>
-                        <div class="card-footer ">
-                            <ul class="list-unstyled list-inline font-small mt-3">
-                                <li class="list-inline-item pr-2 ">
-                                    <i class="fa fa-clock-o pr-1"></i>05/10/2015</li>
-                                <li class="list-inline-item pr-2">
-                                    <a class="">
-                                        <i class="fa fa-shopping-cart pr-1"> </i>21</a>
-                                </li>
-                                <li class="list-inline-item pr-2">
-                                    <a class="">
-                                        <i class="fa fa-eye pr-1"></i>12</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row m-0 p-0">
-                <div class="col-12">
-                    <h4>Sản Phẩm bán chạy nhất</h4>
-                </div>
-                <div class="col-3 py-3 px-4" *ngFor="let newest of _newest let i=index">
-                    <div class="card pt-3" *ngIf="i<10">
-                        <div class="view overlay waves-light center" mdbWavesEffect>
-                            <img class="center" width="180" height="180" src="./assets/img/{{newest.Picture}}" alt="">
-                        </div>
-
-                        <div class="card-body">
-                            <h5 class="card-title">{{newest.ProductName}}
-                            </h5>
-                            <ul class="rating">
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star-o"></i>
-                                </li>
-                                <li class="font-12 text-muted">(53 Nhận xét)</li>
-                            </ul>
-                            <p class="price-sale">
-                                <span class="final-price">{{newest.Price}}</span>
-                                <span class="price-regular">{{newest.Price}}</span>
-                                <span class="sale-tag sale-tag-square">-23%</span>
-                            </p>
-                        </div>
-                        <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect>
-                            <i class="fa fa-shopping-cart pl-1 waves-light" mdbWavesEffect></i>
-                        </a>
-                        <div class="card-footer ">
-                            <ul class="list-unstyled list-inline font-small mt-3">
-                                <li class="list-inline-item pr-2 ">
-                                    <i class="fa fa-clock-o pr-1"></i>05/10/2015</li>
-                                <li class="list-inline-item pr-2">
-                                    <a class="">
-                                        <i class="fa fa-shopping-cart pr-1"> </i>21</a>
-                                </li>
-                                <li class="list-inline-item pr-2">
-                                    <a class="">
-                                        <i class="fa fa-eye pr-1"></i>12</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row m-0 p-0">
-                <div class="col-12">
-                    <h4>Sản Phẩm được xem nhiều nhất</h4>
-                </div>
-                <div class="col-3 py-3 px-4" *ngFor="let newest of _newest let i=index">
-                    <div class="card pt-3" *ngIf="i<10">
-                        <div class="view overlay waves-light center" mdbWavesEffect>
-                            <img class="center" width="180" height="180" src="./assets/img/{{newest.Picture}}" alt="">
-                        </div>
-
-                        <div class="card-body">
-                            <h5 class="card-title">{{newest.ProductName}}
-                            </h5>
-                            <ul class="rating">
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star-o"></i>
-                                </li>
-                                <li class="font-12 text-muted">(53 Nhận xét)</li>
-                            </ul>
-                            <p class="price-sale">
-                                <span class="final-price">{{newest.Price}}</span>
-                                <span class="price-regular">{{newest.Price}}</span>
-                                <span class="sale-tag sale-tag-square">-23%</span>
-                            </p>
-                        </div>
-                        <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect>
-                            <i class="fa fa-shopping-cart pl-1 waves-light" mdbWavesEffect></i>
-                        </a>
-                        <div class="card-footer ">
-                            <ul class="list-unstyled list-inline font-small mt-3">
-                                <li class="list-inline-item pr-2 ">
-                                    <i class="fa fa-clock-o pr-1"></i>05/10/2015</li>
-                                <li class="list-inline-item pr-2">
-                                    <a class="">
-                                        <i class="fa fa-shopping-cart pr-1"> </i>21</a>
-                                </li>
-                                <li class="list-inline-item pr-2">
-                                    <a class="">
-                                        <i class="fa fa-eye pr-1"></i>12</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <h4>Sản Phẩm mới nhất</h4>
         </div>
+        <div class="col-3 py-3 px-4" *ngFor="let newest of _newest let i=index">
+          <div class="card pt-3">
+            <div class="view overlay waves-light center" mdbWavesEffect>
+              <a [routerLink]="['/detailphone']" [queryParams]="{productID: newest.product_id}">
+                <img class="center" width="180" height="180" src="./assets/img/{{newest.product_image_link}}" alt="">
+              </a>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">{{newest.product_name}}
+              </h5>
+              <ul class="rating">
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-o"></i>
+                </li>
+                <li class="font-12 text-muted">(53 Nhận xét)</li>
+              </ul>
+              <p class="price-sale">
+                <span class="final-price">{{newest.product_price}}</span>
+                <span class="price-regular">{{newest.product_price}}</span>
+                <span class="sale-tag sale-tag-square">-23%</span>
+              </p>
+            </div>
+            <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect>
+              <i class="fa fa-shopping-cart pl-1 waves-light" mdbWavesEffect></i>
+            </a>
+            <div class="card-footer ">
+              <ul class="list-unstyled list-inline font-small mt-3">
+                <li class="list-inline-item pr-2 ">
+                  <i class="fa fa-clock-o pr-1"></i>05/10/2015</li>
+                <li class="list-inline-item pr-2">
+                  <a class="">
+                    <i class="fa fa-shopping-cart pr-1"> </i>21</a>
+                </li>
+                <li class="list-inline-item pr-2">
+                  <a class="">
+                    <i class="fa fa-eye pr-1"></i>12</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row m-0 p-0">
+        <div class="col-12">
+          <h4>Sản Phẩm bán chạy nhất</h4>
+        </div>
+        <div class="col-3 py-3 px-4" *ngFor="let newest of _newest let i=index">
+          <div class="card pt-3" *ngIf="i<10">
+            <div class="view overlay waves-light center" mdbWavesEffect>
+              <img class="center" width="180" height="180" src="./assets/img/{{newest.Picture}}" alt="">
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">{{newest.ProductName}}
+              </h5>
+              <ul class="rating">
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-o"></i>
+                </li>
+                <li class="font-12 text-muted">(53 Nhận xét)</li>
+              </ul>
+              <p class="price-sale">
+                <span class="final-price">{{newest.Price}}</span>
+                <span class="price-regular">{{newest.Price}}</span>
+                <span class="sale-tag sale-tag-square">-23%</span>
+              </p>
+            </div>
+            <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect>
+              <i class="fa fa-shopping-cart pl-1 waves-light" mdbWavesEffect></i>
+            </a>
+            <div class="card-footer ">
+              <ul class="list-unstyled list-inline font-small mt-3">
+                <li class="list-inline-item pr-2 ">
+                  <i class="fa fa-clock-o pr-1"></i>05/10/2015</li>
+                <li class="list-inline-item pr-2">
+                  <a class="">
+                    <i class="fa fa-shopping-cart pr-1"> </i>21</a>
+                </li>
+                <li class="list-inline-item pr-2">
+                  <a class="">
+                    <i class="fa fa-eye pr-1"></i>12</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row m-0 p-0">
+        <div class="col-12">
+          <h4>Sản Phẩm được xem nhiều nhất</h4>
+        </div>
+        <div class="col-3 py-3 px-4" *ngFor="let newest of _newest let i=index">
+          <div class="card pt-3" *ngIf="i<10">
+            <div class="view overlay waves-light center" mdbWavesEffect>
+              <img class="center" width="180" height="180" src="./assets/img/{{newest.Picture}}" alt="">
+            </div>
+
+            <div class="card-body">
+              <h5 class="card-title">{{newest.ProductName}}
+              </h5>
+              <ul class="rating">
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star"></i>
+                </li>
+                <li>
+                  <i class="fa fa-star-o"></i>
+                </li>
+                <li class="font-12 text-muted">(53 Nhận xét)</li>
+              </ul>
+              <p class="price-sale">
+                <span class="final-price">{{newest.Price}}</span>
+                <span class="price-regular">{{newest.Price}}</span>
+                <span class="sale-tag sale-tag-square">-23%</span>
+              </p>
+            </div>
+            <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect>
+              <i class="fa fa-shopping-cart pl-1 waves-light" mdbWavesEffect></i>
+            </a>
+            <div class="card-footer ">
+              <ul class="list-unstyled list-inline font-small mt-3">
+                <li class="list-inline-item pr-2 ">
+                  <i class="fa fa-clock-o pr-1"></i>05/10/2015</li>
+                <li class="list-inline-item pr-2">
+                  <a class="">
+                    <i class="fa fa-shopping-cart pr-1"> </i>21</a>
+                </li>
+                <li class="list-inline-item pr-2">
+                  <a class="">
+                    <i class="fa fa-eye pr-1"></i>12</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
