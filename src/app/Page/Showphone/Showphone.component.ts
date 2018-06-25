@@ -25,11 +25,11 @@ export class ShowphoneComponent {
             this.listproduct = null;
             this._CategorieID = null;
             this._SuppliersID = null;
-            this._CategorieID = Number(this.activatedRoute.snapshot.queryParams["CategorieID"]);
+            this._CategorieID = Number(this.activatedRoute.snapshot.queryParams["catalog_id"]);
             if (this._CategorieID) {
                 this.listproduct = this._Products.filter(x => x.CategorieID === this._CategorieID);
             }
-            this._SuppliersID = Number(this.activatedRoute.snapshot.queryParams["suppliersID"]);
+            this._SuppliersID = Number(this.activatedRoute.snapshot.queryParams["company_id"]);
             if (this._SuppliersID) {
                 this.listproduct = this._Products.filter(x => x.SuppliersID === this._SuppliersID);
             }
