@@ -5,6 +5,8 @@ var connection = require('./Dbconnection');
 var routesproduct = require('./routes/routesproduct');
 var routescatalog = require('./routes/routescatalog');
 var routescompany = require('./routes/routescompany');
+var routesuser = require('./routes/routesuser');
+
 
 var app = express();
 var cors = require('cors');
@@ -17,6 +19,7 @@ app.use(bodyparser.json());
 app.use('/api', routesproduct);
 app.use('/api', routescatalog);
 app.use('/api', routescompany);
+app.use('/api', routesuser);
 
 
 var server = app.listen(3000, "127.0.0.1", function () {
