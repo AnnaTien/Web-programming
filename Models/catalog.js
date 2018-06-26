@@ -4,8 +4,8 @@ var Catalog = {
   getAllCatalog: function (callback) {
     return db.query("Select * from catalog", callback);
   },
-  getCatalogById: function (id, callback) {
-    return db.query("select * from catalog where catalog_id=?", [id], callback);
+  getCatalogById: function (catalogid, callback) {
+    return db.query("select * from catalog where catalog_id=?", [catalogid], callback);
   }
 };
 module.exports = Catalog;

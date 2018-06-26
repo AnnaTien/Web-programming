@@ -1,24 +1,23 @@
 var express = require('express');
 var router = express.Router();
 var Catolog = require('../Models/catalog');
-router.get('/catalog/:id?', function (req, res, next) {
-  if (req.params.id) {
-    Catolog.getCatalogById(req.params.id, function (err, rows) {
-      if (err) {
-        res.json(err);
-      } else {
-        res.json(rows);
-      }
-    });
-  } else { 
-    Catolog.getAllCatalog(function (err, rows) {
-      if (err) {
-        res.json(err);
-      } else {
-        res.json(rows);
-      }
-
-    });
-  }
+router.get('/catalogbyid/:catalogid', function (req, res, next) {
+  var catalogid = req.params.catalogid
+  Catolog.getCatalogById(catalogid, function (err, rows) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(rows[0]);
+    }
+  });
+});
+router.get('/catalogall', function (req, res, next) {
+  Catolog.getAllCatalog(function (err, rows) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(rows);
+    }
+  });
 });
 module.exports = router;
