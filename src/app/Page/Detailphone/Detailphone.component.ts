@@ -1,36 +1,39 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppApi } from '../../app.api';
 import { Router, ActivatedRoute, NavigationStart } from "@angular/router";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: "detail-phone",
     templateUrl: "Detailphone.component.html",
-    providers: [AppApi]
 })
 
 export class DetailphoneComponent {
-    AppApi: AppApi = new AppApi();
     sametype = null;
     samecompany = null;
-    _Categories = this.AppApi.Categories;
-    _Products = this.AppApi.Products;
-    _productID: any = null;
+    productid: any = null;
     detailproduct: any = null;
-    constructor(private appApi: AppApi,
-        private activatedRoute: ActivatedRoute,
-        private routing: Router) {
-
-        //Trường hợp đổi empID ngay trên đường dẫn
-        this.routing.events.subscribe(event => {
-            this.sametype = null;
-            this.samecompany = null;
-            this._productID = Number(this.activatedRoute.snapshot.queryParams["productID"]);
-            this.detailproduct = this._Products.filter(x => x.ProductID === this._productID)[0];
-            if (this.detailproduct) {
-                this.sametype = this._Products.filter(x => x.CategorieID === this.detailproduct.CategorieID);
-                this.samecompany = this._Products.filter(x => x.SuppliersID === this.detailproduct.SuppliersID);
+    sub: any = null;
+    constructor(private activatedRoute: ActivatedRoute,
+        private routing: Router, private http: HttpClient) {
+        this.sub = this.activatedRoute.queryParams.subscribe(params => {
+            if (params.product_id) {
+                this.productid = params.product_id;
+                this.http.get("http://127.0.0.1:3000/api/productbyid/" + this.productid).subscribe(data => {
+                    this.detailproduct = data;
+                    this.http.get("http://127.0.0.1:3000/api/productcatalog/" + this.detailproduct.catalog_id).subscribe(data => {
+                        this.sametype = data;
+                    });
+                    this.http.get("http://127.0.0.1:3000/api/productcompany/" + this.detailproduct.company_id).subscribe(data => {
+                        this.samecompany = data;
+                    });
+                    console.log("detailproduct", this.detailproduct);
+                });
             }
         });
-
     }
+    ngOnDestroy() {
+        this.sub.unsubscribe();
+    }
+
 }

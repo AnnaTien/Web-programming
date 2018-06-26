@@ -1,127 +1,162 @@
 <div class="comtainer detailproduct">
-    <div class="row" *ngIf="detailproduct">
-        <div class="col-12">
-            <!--Name-->
+  <div class="row" *ngIf="detailproduct">
+    <div class="col-12">
+      <!--Name-->
 
-            <div class="row">
-                <!--Avatar-->
-                <div class="col-5 img-center">
-                    <img width="360" height="360" src="./assets/img/{{detailproduct.Picture}}" alt="">
-                </div>
-                <!--Author Data-->
-                <div class="col-5 h6 tableparameter">
-                    <h2 class="font-weight-bold">{{detailproduct.ProductName}}</h2>
-                    <ul class="parameter">
-                        <li>
-                            <span>Giá bán:</span>
-                            <div>{{detailproduct.Price}}</div>
-                        </li>
-                        <li>
-                            <span>Số lượt xem:</span>
-                            <div>{{detailproduct.NumView}}</div>
-                        </li>
-                        <li>
-                            <span>Số lượng bán:</span>
-                            <div>{{detailproduct.NumPrice}}</div>
-                        </li>
-                        <li>
-                            <span>Xuất xứ:</span>
-                            <div>{{detailproduct.Madein}}</div>
-                        </li>
-                        <li>
-                            <span>Loại:</span>
-                            <div>{{detailproduct.Madein}}</div>
-                        </li>
-                        <li>
-                            <span>Nhà sản xuất:</span>
-                            <div>{{detailproduct.SuppliersName}}</div>
-                        </li>
-                        <li>
-                            <span>Mô tả:</span>
-                            <div>{{detailproduct.Price}}</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+      <div class="row">
+        <!--Avatar-->
+        <div class="col-5 img-center">
+          <img width="360" height="360" src="./assets/img/{{detailproduct.product_image_link}}" alt="">
         </div>
-        <div class="row p-3">
-            <div class="col-12">
-                <h4>Sản phẩm cùng loại</h4>
-            </div>
-            <div class="col-2 py-3" *ngFor="let newest of sametype let i=index">
-                <div class="card pt-3" *ngIf="i<6">
-                    <div class="view overlay waves-light center" mdbWavesEffect>
-                        <a [routerLink]="['/detailphone']" [queryParams]="{productID: newest.ProductID}">
-                            <img class="center" width="180" height="180" src="./assets/img/{{newest.Picture}}" alt="">
-                        </a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{newest.ProductName}}
-                        </h5>
-                        <ul class="rating">
-                            <li>
-                                <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star"></i>
-                            </li>
-                            <li>
-                                <i class="fa fa-star-o"></i>
-                            </li>
-                            <li class="font-12 text-muted">(53 Nhận xét)</li>
-                        </ul>
-                        <p class="price-sale">
-                            <span class="final-price">{{newest.Price}}</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <!--Author Data-->
+        <div class="col-5 h6 tableparameter">
+          <h2 class="font-weight-bold">{{detailproduct.product_name}}</h2>
+          <ul class="parameter">
+            <li>
+              <span>Giá bán:</span>
+              <div>{{detailproduct.product_price}}</div>
+            </li>
+            <li>
+              <span>Số lượt xem:</span>
+              <div>{{detailproduct.product_view}}</div>
+            </li>
+            <li>
+              <span>Số lượng bán:</span>
+              <div>{{detailproduct.product_pay}}</div>
+            </li>
+            <li>
+              <span>Xuất xứ:</span>
+              <div>{{detailproduct.Madein}}</div>
+            </li>
+            <li>
+              <span>Loại:</span>
+              <div>{{detailproduct.Madein}}</div>
+            </li>
+            <li>
+              <span>Nhà sản xuất:</span>
+              <div>{{detailproduct.SuppliersName}}</div>
+            </li>
+            <li>
+              <span>Mô tả:</span>
+              <div>{{detailproduct.product_price}}</div>
+            </li>
+          </ul>
         </div>
-        <div class="row p-3">
-                <div class="col-12">
-                    <h4>Sản phẩm cùng nhà sản xuất</h4>
-                </div>
-                <div class="col-2 py-3" *ngFor="let newest of samecompany let i=index">
-                    <div class="card pt-3" *ngIf="i<6">
-                        <div class="view overlay waves-light center" mdbWavesEffect>
-                            <a [routerLink]="['/detailphone']" [queryParams]="{productID: newest.ProductID}">
-                                <img class="center" width="180" height="180" src="./assets/img/{{newest.Picture}}" alt="">
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{newest.ProductName}}
-                            </h5>
-                            <ul class="rating">
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i>
-                                </li>
-                                <li>
-                                    <i class="fa fa-star-o"></i>
-                                </li>
-                                <li class="font-12 text-muted">(53 Nhận xét)</li>
-                            </ul>
-                            <p class="price-sale">
-                                <span class="final-price">{{newest.Price}}</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+      </div>
     </div>
+    <div class="row p-3">
+      <div class="col-12">
+        <h4>Sản phẩm cùng loại</h4>
+      </div>
+      <div class="col-3 py-3" *ngFor="let newest of sametype let i=index">
+        <div class="card pt-3">
+          <div class="view overlay waves-light center" mdbWavesEffect>
+            <a [routerLink]="['/detailphone']" [queryParams]="{product_id: newest.product_id}">
+              <img class="center" width="180" height="180" src="./assets/img/{{newest.product_image_link}}" alt="">
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{newest.product_name}}
+            </h5>
+            <ul class="rating">
+              <li>
+                <i class="fa fa-star"></i>
+              </li>
+              <li>
+                <i class="fa fa-star"></i>
+              </li>
+              <li>
+                <i class="fa fa-star"></i>
+              </li>
+              <li>
+                <i class="fa fa-star"></i>
+              </li>
+              <li>
+                <i class="fa fa-star-o"></i>
+              </li>
+              <li class="font-12 text-muted">({{newest.product_view}} Nhận xét)</li>
+            </ul>
+            <p class="price-sale">
+              <span class="final-price">{{newest.product_price}} &nbsp;</span>
+              <span class="sale-tag sale-tag-square">-{{newest.product_discount}}%</span>
+            </p>
+          </div>
+          <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect>
+            <i class="fa fa-shopping-cart pl-1 waves-light" mdbWavesEffect></i>
+          </a>
+          <div class="card-footer ">
+            <ul class="list-unstyled list-inline font-small mt-3">
+              <li class="list-inline-item pr-2 ">
+                <i class="fa fa-clock-o pr-1"></i>{{newest.product_created| date: 'dd/MM/yyyy'}}</li>
+              <li class="list-inline-item pr-2">
+                <a class="">
+                  <i class="fa fa-shopping-cart pr-1"> </i>{{newest.product_pay}}</a>
+              </li>
+              <li class="list-inline-item pr-2">
+                <a class="">
+                  <i class="fa fa-eye pr-1"></i>{{newest.product_view}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row p-3">
+      <div class="col-12">
+        <h4>Sản phẩm cùng nhà sản xuất</h4>
+      </div>
+      <div class="col-3 py-3" *ngFor="let newest of samecompany let i=index">
+        <div class="card pt-3">
+          <div class="view overlay waves-light center" mdbWavesEffect>
+            <a [routerLink]="['/detailphone']" [queryParams]="{product_id: newest.product_id}">
+              <img class="center" width="180" height="180" src="./assets/img/{{newest.product_image_link}}" alt="">
+            </a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{newest.product_name}}
+            </h5>
+            <ul class="rating">
+              <li>
+                <i class="fa fa-star"></i>
+              </li>
+              <li>
+                <i class="fa fa-star"></i>
+              </li>
+              <li>
+                <i class="fa fa-star"></i>
+              </li>
+              <li>
+                <i class="fa fa-star"></i>
+              </li>
+              <li>
+                <i class="fa fa-star-o"></i>
+              </li>
+              <li class="font-12 text-muted">({{newest.product_view}} Nhận xét)</li>
+            </ul>
+            <p class="price-sale">
+              <span class="final-price">{{newest.product_price}} &nbsp;</span>
+              <span class="sale-tag sale-tag-square">-{{newest.product_discount}}%</span>
+            </p>
+          </div>
+          <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect>
+            <i class="fa fa-shopping-cart pl-1 waves-light" mdbWavesEffect></i>
+          </a>
+          <div class="card-footer ">
+            <ul class="list-unstyled list-inline font-small mt-3">
+              <li class="list-inline-item pr-2 ">
+                <i class="fa fa-clock-o pr-1"></i>{{newest.product_created| date: 'dd/MM/yyyy'}}</li>
+              <li class="list-inline-item pr-2">
+                <a class="">
+                  <i class="fa fa-shopping-cart pr-1"> </i>{{newest.product_pay}}</a>
+              </li>
+              <li class="list-inline-item pr-2">
+                <a class="">
+                  <i class="fa fa-eye pr-1"></i>{{newest.product_view}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

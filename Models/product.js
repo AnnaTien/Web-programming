@@ -6,8 +6,8 @@ var product = {
     return db.query("Select * from product", callback);
   },
   //lấy thông tin chi tiết của sản phẩm
-  getProductById: function (id, callback) {
-    return db.query("select * from product where product_id=?", [id], callback);
+  getProductById: function (productid, callback) {
+    return db.query("select * from product where product_id=?", [productid], callback);
   },
   getProductlatest: function (callback) {
     return db.query("Select * from product order by product_created desc", callback);

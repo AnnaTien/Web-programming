@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Product = require('../Models/product');
 
-router.get('/productbyid/:id', function (req, res, next) {
+router.get('/productbyid/:productid', function (req, res, next) {
   var productid = req.params.productid
   Product.getProductById(productid, function (err, rows) {
     if (err) {
