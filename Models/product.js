@@ -1,9 +1,11 @@
 var db = require('../Dbconnection');
 
 var product = {
+  //lấy tất cả các sản phẩm
   getAllProduct: function (id, callback) {
     return db.query("Select * from product", callback);
   },
+  //lấy thông tin chi tiết của sản phẩm
   getProductById: function (id, callback) {
     return db.query("select * from product where product_id=?", [id], callback);
   },
@@ -16,8 +18,11 @@ var product = {
   getProductdBestSell: function (callback) {
     return db.query("Select * from product order by product_pay desc", callback);
   },
-  getproducttype: function (typeid, callback) {
-    return db.query("select * from product where catalog_id=?", [typeid], callback);
+  getproductcatalog: function (catalogid, callback) {
+    return db.query("select * from product where catalog_id=?", [catalogid], callback);
+  },
+  getproductcompany: function (companyid, callback) {
+    return db.query("select * from product where company_id=?", [companyid], callback);
   }
 };
 module.exports = product;
