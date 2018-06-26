@@ -44,6 +44,7 @@
     "gulp-rename": "1.2.x",
     "gulp-run": "1.7.x",
     "hammerjs": "2.0.x",
+    "moment": "^2.22.2",
     "mysql": "^2.15.0",
     "ng-html-util": "1.0.x",
     "ngm-cli": "0.5.x",
