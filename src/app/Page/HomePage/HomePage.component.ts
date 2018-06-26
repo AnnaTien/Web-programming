@@ -109,6 +109,13 @@ export class HomePageComponent implements OnInit {
                 console.log("doctors3", this.doctors3);
             }
         });
+        var login = {
+            email: 'nguyenngoclinhtien1001@gmail.com',
+            password: '123456',
+        }
+        this.http.post("http://127.0.0.1:3000/api/login", login).subscribe(data => {
+            console.log("datalogin", data);
+        })
     }
     Basic1 = false;
     Basic2 = false;
