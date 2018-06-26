@@ -15,14 +15,14 @@ export class HeaderComponent {
     iconsSelect: Array<any>;
 
     ngOnInit() {
-        this.http.get("http://127.0.0.1:3000/api/catalog").subscribe(data => {
+        this.http.get("http://127.0.0.1:3000/api/catalogall").subscribe(data => {
             if (data) {
                 this.lcatalog = data;
                 console.log("lcatalog", this.lcatalog);
             }
 
         });
-        this.http.get("http://127.0.0.1:3000/api/company").subscribe(data => {
+        this.http.get("http://127.0.0.1:3000/api/companyall").subscribe(data => {
             if (data) {
                 this.lcompany = data;
                 console.log("lcompany", this.lcompany);

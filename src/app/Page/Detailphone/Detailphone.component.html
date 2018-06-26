@@ -26,19 +26,15 @@
             </li>
             <li>
               <span>Xuất xứ:</span>
-              <div>{{detailproduct.Madein}}</div>
+              <div>{{detailproduct.product_madein}}</div>
             </li>
             <li>
               <span>Loại:</span>
-              <div>{{detailproduct.Madein}}</div>
+              <div *ngIf="catalog">{{catalog.catalog_name}}</div>
             </li>
             <li>
               <span>Nhà sản xuất:</span>
-              <div>{{detailproduct.SuppliersName}}</div>
-            </li>
-            <li>
-              <span>Mô tả:</span>
-              <div>{{detailproduct.product_price}}</div>
+              <div *ngIf="company">{{company.company_name}}</div>
             </li>
           </ul>
         </div>
