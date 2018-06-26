@@ -24,7 +24,7 @@
                       <div class="col-3" *ngFor="let newest of items">
                         <div class="card pt-3">
                           <div class="view overlay waves-light center" mdbWavesEffect>
-                            <a [routerLink]="['/detailphone']" [queryParams]="{productID: newest.product_id}">
+                            <a [routerLink]="['/detailphone']" [queryParams]="{product_id: newest.product_id}">
                               <img class="center" width="180" height="180" src="./assets/img/{{newest.product_image_link}}" alt="">
                             </a>
                           </div>
