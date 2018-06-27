@@ -21,8 +21,17 @@ var product = {
   getproductcatalog: function (catalogid, callback) {
     return db.query("select * from product where catalog_id=?", [catalogid], callback);
   },
-  getproductcompany: function (companyid, callback) {
-    return db.query("select * from product where company_id=?", [companyid], callback);
+  getproductproduct: function (productid, callback) {
+    return db.query("select * from product where product_id=?", [productid], callback);
+  },
+  addproduct: function (product, callback) {
+    return db.query("Insert into product(product_name,catalog_id,company_id,product_price,product_discount,product_madein) values(?,?,?,?,?,?)", [product.product_name, product.catalog_id, product.company_id, product.product_price, product.product_discount, product.product_madein], callback);
+  },
+  deleteproduct: function (product_id, callback) {
+    return db.query("delete from product where product_id=?", [product_id], callback);
+  },
+  updateproduct: function (product_id, product, callback) {
+    return db.query("update product set product_name=?,catalog_id=?,company_id=?,product_price=?,product_discount=?,product_madein=? where product_id=?", [product.product_name, product.catalog_id, product.company_id, product.product_price, product.product_discount, product.product_madein, product_id], callback);
   }
 };
 module.exports = product;

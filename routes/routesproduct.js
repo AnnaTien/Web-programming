@@ -68,4 +68,33 @@ router.get('/productcompany/:companyid', function (req, res, next) {
     }
   });
 });
+router.post('/addproduct', function (req, res, next) {
+  Product.addproduct(req.body, function (err, count) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(req.body);
+    }
+  });
+});
+
+router.delete('/deleteproduct/:product_id', function (req, res, next) {
+  Product.deleteproduct(req.params.product_id, function (err, count) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(count);
+    }
+  });
+});
+
+router.put('/updateproduct/:product_id', function (req, res, next) {
+  Product.updateproduct(req.params.product_id, req.body, function (err, rows) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(rows);
+    }
+  });
+});
 module.exports = router;
