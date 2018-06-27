@@ -60,14 +60,39 @@ export class CategoriesComponent implements OnInit {
 
   public saveHandler({ sender, rowIndex, formGroup, isNew }): void {
     const product = formGroup.value;
+    console.log("product", product);
+    if (isNew) {
+      this.http.post("http://127.0.0.1:3000/api/addcatalog", product).subscribe(data => {
+        console.log('addcatalog', data);
+        this.http.get("http://127.0.0.1:3000/api/catalogall").subscribe(data => {
+          this.listcatalog = data;
+          console.log("catalogall", this.listcatalog);
+        });
+      })
+    }
+    else {
+      this.http.put("http://127.0.0.1:3000/api/updatecatalog/" + product.catalog_id, product).subscribe(data => {
 
-    // this.service.save(product, isNew);
+        console.log('updatecatalog', data);
+        this.http.get("http://127.0.0.1:3000/api/catalogall").subscribe(data => {
+          this.listcatalog = data;
+          console.log("catalogall", this.listcatalog);
+        });
+      })
+    }
 
     sender.closeRow(rowIndex);
   }
 
   public removeHandler({ dataItem }): void {
-    //this.service.remove(dataItem);
+    console.log("aaa")
+    this.http.delete("http://127.0.0.1:3000/api/deletecatalog/" + dataItem.catalog_id).subscribe(data => {
+      console.log("data", data);
+      this.http.get("http://127.0.0.1:3000/api/catalogall").subscribe(data => {
+        this.listcatalog = data;
+        console.log("catalogall", this.listcatalog);
+      });
+    })
   }
 
   private closeEditor(grid, rowIndex = this.editedRowIndex) {
