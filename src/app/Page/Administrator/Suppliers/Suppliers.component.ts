@@ -59,13 +59,38 @@ export class SuppliersComponent implements OnInit {
   public saveHandler({ sender, rowIndex, formGroup, isNew }): void {
     const product = formGroup.value;
 
-    // this.service.save(product, isNew);
+    if (isNew) {
+      this.http.post("http://127.0.0.1:3000/api/addcompany", product).subscribe(data => {
+        console.log('addcompany', data);
+        this.http.get("http://127.0.0.1:3000/api/companyall").subscribe(data => {
+          this.listcompany = data;
+          console.log("companyall", this.listcompany);
+        });
+      })
+    }
+    else {
+      this.http.put("http://127.0.0.1:3000/api/updatecompany/" + product.company_id, product).subscribe(data => {
+
+        console.log('updatecompany', data);
+        this.http.get("http://127.0.0.1:3000/api/companyall").subscribe(data => {
+          this.listcompany = data;
+          console.log("companyall", this.listcompany);
+        });
+      })
+    }
 
     sender.closeRow(rowIndex);
   }
 
   public removeHandler({ dataItem }): void {
-    //this.service.remove(dataItem);
+    console.log("aaa")
+    this.http.delete("http://127.0.0.1:3000/api/deletecompany/" + dataItem.company_id).subscribe(data => {
+      console.log("data", data);
+      this.http.get("http://127.0.0.1:3000/api/companyall").subscribe(data => {
+        this.listcompany = data;
+        console.log("companyall", this.listcompany);
+      });
+    })
   }
 
   private closeEditor(grid, rowIndex = this.editedRowIndex) {
