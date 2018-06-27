@@ -95,14 +95,30 @@ export class ProductsComponent {
 
   public saveHandler({ sender, rowIndex, formGroup, isNew }): void {
     const product = formGroup.value;
-
-    // this.service.save(product, isNew);
+    if (isNew) {
+      this.http.post("http://127.0.0.1:3000/api/addproduct", product).subscribe(data => {
+        this.http.get("http://127.0.0.1:3000/api/productall").subscribe(data => {
+          this.listproduct = data;
+        });
+      })
+    }
+    else {
+      this.http.put("http://127.0.0.1:3000/api/updateproduct/" + product.product_id, product).subscribe(data => {
+        this.http.get("http://127.0.0.1:3000/api/productall").subscribe(data => {
+          this.listproduct = data;
+        });
+      })
+    }
 
     sender.closeRow(rowIndex);
   }
 
   public removeHandler({ dataItem }): void {
-    //this.service.remove(dataItem);
+    this.http.delete("http://127.0.0.1:3000/api/deleteproduct/" + dataItem.product_id).subscribe(data => {
+      this.http.get("http://127.0.0.1:3000/api/productall").subscribe(data => {
+        this.listproduct = data;
+      });
+    })
   }
 
   private closeEditor(grid, rowIndex = this.editedRowIndex) {
