@@ -1,47 +1,76 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AppApi } from '../../../app.api';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { State, process } from '@progress/kendo-data-query';
+import { HttpClient } from '@angular/common/http';
+const createFormGroup = dataItem => new FormGroup({
+  "company_id": new FormControl(dataItem.company_id),
+  "company_name": new FormControl(dataItem.company_name, Validators.required),
+});
 
 @Component({
   selector: 'app-admin-suppliers',
   templateUrl: './Suppliers.component.html',
   styleUrls: ['./Suppliers.component.scss'],
-  providers: [AppApi]
+
 })
 export class SuppliersComponent implements OnInit {
-
-  LstSupplier: any = [];
-  pageSize: any = 10;
-  numPage: any = 1; 
-  pageNumber: any  = 1;
-  constructor(private router: Router, private _data: AppApi ) { }
-
+  constructor(private http: HttpClient) { }
+  listcompany: any = null;
+  public formGroup: FormGroup;
+  private editedRowIndex: number;
   ngOnInit() {
-    let num  = this._data.Suppliers.length / this.pageSize ;
-    if(this._data.Suppliers.length - (num * this.pageSize) > 0 )
-      this.numPage = num + 1;
-    else 
-      this.numPage = num;
-    this.LoadData(this.pageNumber);
+    this.http.get("http://127.0.0.1:3000/api/companyall").subscribe(data => {
+      this.listcompany = data;
+      console.log("listcompany", this.listcompany);
+    });
+  }
+  public gridState: State = {
+    sort: [],
+    skip: 0,
+    take: 10
+  };
+
+  public onStateChange(state: State) {
+    this.gridState = state;
   }
 
-  LoadData(pageNumber){
-    if (!pageNumber)
-      pageNumber = this.pageNumber;
-    else if (pageNumber <= this.numPage && pageNumber > 0)
-      this.pageNumber = pageNumber
-    this.LstSupplier = this._data.Suppliers.filter(dt => 
-      dt.SuppliersID >= ((this.pageNumber-1)*this.pageSize) + 1 
-      && dt.SuppliersID <= ((this.pageNumber-1)*this.pageSize)+ 1 +this.pageSize
-    );
+  public addHandler({ sender }) {
+    this.closeEditor(sender);
+
+    this.formGroup = new FormGroup({
+      "company_id": new FormControl(),
+      "company_name": new FormControl('', Validators.required),
+    });
+    sender.addRow(this.formGroup);
   }
 
-  CreateRange(){
-    var items: number[] = [];
-    for(var i = 1; i <= this.numPage; i++){
-       items.push(i);
-    }
-    return items;
+  public editHandler({ sender, rowIndex, dataItem }) {
+    this.closeEditor(sender);
+
+    this.formGroup = createFormGroup(dataItem);
+
+    this.editedRowIndex = rowIndex;
+
+    sender.editRow(rowIndex, this.formGroup);
+  } public cancelHandler({ sender, rowIndex }) {
+    this.closeEditor(sender, rowIndex);
   }
 
+  public saveHandler({ sender, rowIndex, formGroup, isNew }): void {
+    const product = formGroup.value;
+
+    // this.service.save(product, isNew);
+
+    sender.closeRow(rowIndex);
+  }
+
+  public removeHandler({ dataItem }): void {
+    //this.service.remove(dataItem);
+  }
+
+  private closeEditor(grid, rowIndex = this.editedRowIndex) {
+    grid.closeRow(rowIndex);
+    this.editedRowIndex = undefined;
+    this.formGroup = undefined;
+  }
 }

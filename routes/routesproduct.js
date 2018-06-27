@@ -13,7 +13,7 @@ router.get('/productbyid/:productid', function (req, res, next) {
   });
 });
 router.get('/productall', function (req, res, next) {
-  Product.getAllProduct(function (err, rows) {
+  Product.getAllproduct(function (err, rows) {
     if (err) {
       res.json(err);
     } else {

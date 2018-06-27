@@ -2,7 +2,7 @@ var db = require('../Dbconnection');
 
 var product = {
   //lấy tất cả các sản phẩm
-  getAllProduct: function (id, callback) {
+  getAllproduct: function (callback) {
     return db.query("Select * from product", callback);
   },
   //lấy thông tin chi tiết của sản phẩm

@@ -1,63 +1,25 @@
-<div class="row">
-    <div class="col-10">
-        <a class="btn btn-primary">
-            <i class="fa fa-plus"> </i> Thêm Loại sản phẩm mới</a>
-    </div>
-
-</div>
-<div class="row">
-    <div class="col-12" style="background-color: white !important;">
-        <div class="row">
-            <table class="btn-info">
-                <tr class="header-tb btn-warning">
-                    <th style="width:3rem;" class="text-center ">ID</th>
-                    <th class="text-left ">Tên loại sản phẩm</th>
-                    <th class="text-center ">Thao tác</th>
-                </tr>
-                <tr *ngFor="let cat of Categories">
-                    <td>
-                        <input type="text" class="form-control form-control-sm text-center mr-1" [(ngModel)]="cat.CategorieID" style="width:3rem;">
-                    </td>
-                    <td>
-                        <input type="text" class="form-control form-control-sm mr-1" [(ngModel)]="cat.CategorieName">
-                    </td>
-                    <td>
-                        <a class="text-success ml-1 mr-1" role="button"><i class="fa fa-save"></i></a>
-                        <a class="text-danger ml-1" role="button"><i class="fa fa-remove"></i></a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div class="row">
-            <div class="col-12 text-center">
-                <nav aria-label="pagination example">
-                    <ul class="pagination pg-blue">
-
-                        <!--Arrow left-->
-                        <li class="page-item" [disabled]="pageNumber == 1">
-                            <a class="page-link" (click)="LoadData(pageNumber-1);" aria-label="Previous">
-                                <span aria-hidden="true" class="h5">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-
-                        <li class="page-item" *ngFor="let item of CreateRange()">
-                            <a class="page-link" (click)="LoadData(item);">
-                                <h5>{{item}}</h5>
-                                <span *ngIf="item==pageNumber" class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="page-item" [disabled]="pageNumber == numPage">
-                            <a class="page-link" (click)="LoadData(pageNumber+1);" aria-label="Next">
-                                <span aria-hidden="true" class="h5">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
-        </div>
-
-    </div>
-</div>
+<kendo-grid [data]="listcatalog" (edit)="editHandler($event)" (cancel)="cancelHandler($event)" (save)="saveHandler($event)"
+  (remove)="removeHandler($event)" (add)="addHandler($event)" [height]="329" [pageSize]="gridState.take" [skip]="gridState.skip"
+  [sort]="gridState.sort" [pageable]="true" [sortable]="true" [navigable]="true" *ngIf="listcatalog">
+  <ng-template kendoGridToolbarTemplate>
+    <button kendoGridAddCommand>Add new</button>
+  </ng-template>
+  <kendo-grid-column field="catalog_name" title="Name" width="220">
+    <ng-template kendoGridEditTemplate let-column="column" let-formGroup="formGroup" let-isNew="isNew">
+      <input #input class="k-textbox" [formControl]="formGroup.get(column.field)">
+      <kendo-popup [anchor]="input" *ngIf="formGroup.get(column.field).invalid && !(isNew && formGroup.get(column.field).untouched)"
+        popupClass="k-widget k-tooltip k-tooltip-validation k-invalid-msg">
+        <span class="k-icon k-i-warning"></span>
+        Product name is required
+      </kendo-popup>
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-command-column title="command">
+    <ng-template kendoGridCellTemplate let-isNew="isNew">
+      <button kendoGridEditCommand [primary]="true">Edit</button>
+      <button kendoGridRemoveCommand>Remove</button>
+      <button kendoGridSaveCommand [disabled]="formGroup?.invalid">{{ isNew ? 'Add' : 'Update' }}</button>
+      <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>
+    </ng-template>
+  </kendo-grid-command-column>
+</kendo-grid>

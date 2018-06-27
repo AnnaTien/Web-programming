@@ -21,6 +21,7 @@
       "prefix": "app",
       "styles": [
         "../node_modules/font-awesome/scss/font-awesome.scss",
+        "../node_modules/@progress/kendo-theme-default/dist/all.css",
         "../scss/bootstrap/bootstrap.scss",
         "../scss/mdb.scss",
         "assets/stype/app.scss"

@@ -1,44 +1,40 @@
+<div class="container-fuild">
+  <div class="d-flex flex-row">
+    <div style="width: 20%;padding-right: 20px" class="list-group">
 
-<div class="row container-fuild px-5">
-    <div class="col-md-2">
-        <a role="button" (click)="ViewDetail(1)" >
-            <div class="card mb-3 btn-success" >
-                <div class="card-body" >
-                    <h6 class="card-title font-weight-bold" >Quản Lý Sản Phẩm</h6>
-                </div>
-            </div>
+      <div class="list-group h5">
+        <a role="button" (click)="ViewDetail(1)" class="list-group-item list-group-item-action active">
+          Quản lí sản phẩm
+          <p class=" m-o pt-1" style="font-size: 14px">
+            <span>Tống số:</span>
+            <span>10</span>
+          </p>
         </a>
-        <a role="button" (click)="ViewDetail(2)" >
-            <div class="card mb-3 btn-secondary" >
-                <div class="card-body" >
-                    <h6 class="card-title font-weight-bold">Quản Lý Loại Sản Phẩm</h6>
-                </div>
-            </div>
+        <a role="button" (click)="ViewDetail(2)" class="list-group-item list-group-item-action">Quản lí loại sản phẩm
+          <p class=" m-o pt-1" style="font-size: 14px">
+            <span>Tống số:</span>
+            <span>10</span>
+          </p>
         </a>
-        <a role="button" (click)="ViewDetail(3)" >
-            <div class="card mb-3 btn-info" >
-                <div class="card-body" >
-                    <h6 class="card-title font-weight-bold">Quản Lý Nhà Sản Xuất</h6>
-                </div>
-            </div>
+        <a role="button" (click)="ViewDetail(3)" class="list-group-item list-group-item-action">Quản lí nhà sản xuất
+          <p class=" m-o pt-1" style="font-size: 14px">
+            <span>Tống số:</span>
+            <span>10</span>
+          </p>
         </a>
-        <a role="button" (click)="ViewDetail(4)" >
-            <div class="card mb-3 btn-warning" >
-                <div class="card-body" >
-                    <h6 class="card-title font-weight-bold">Quản Lý Đơn Hàng</h6>
-                </div>
-            </div>
+        <a role="button" (click)="ViewDetail(4)" class="list-group-item list-group-item-action">Quản lí đơn hàng
+          <p class=" m-o pt-1" style="font-size: 14px">
+            <span>Tống số:</span>
+            <span>10</span>
+          </p>
         </a>
+      </div>
     </div>
-<div class="col-10">
-    <app-admin-products [hidden]="CurAcctive != func.product"></app-admin-products>
-    <app-admin-categories [hidden]="CurAcctive != func.categories"></app-admin-categories>
-    <app-admin-bills [hidden]="CurAcctive != func.bill"></app-admin-bills>
-    <app-admin-suppliers [hidden]="CurAcctive != func.supplier"></app-admin-suppliers>
-</div> 
+    <div style="width: 80%;padding-left: 20px">
+      <app-admin-products [hidden]="CurAcctive != func.product"></app-admin-products>
+      <app-admin-categories [hidden]="CurAcctive != func.categories"></app-admin-categories>
+      <app-admin-bills [hidden]="CurAcctive != func.bill"></app-admin-bills>
+      <app-admin-suppliers [hidden]="CurAcctive != func.supplier"></app-admin-suppliers>
+    </div>
+  </div>
 </div>
-<div class="admin-body">
-
-</div>
-
-
