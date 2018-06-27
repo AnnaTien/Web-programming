@@ -29,6 +29,7 @@ import { PopupModule } from '@progress/kendo-angular-popup';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { DropDownListModule } from '@progress/kendo-angular-dropdowns';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { CartComponent } from './Page/Cart/Cart.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -45,7 +46,8 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
         SuppliersComponent,
         CategoriesComponent,
         BillsComponent,
-        AcessDeniedComponent
+        AcessDeniedComponent,
+        CartComponent,
     ],
     imports: [
         BrowserModule,
