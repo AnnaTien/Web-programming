@@ -96,4 +96,13 @@ router.put('/updateproduct/:product_id', function (req, res, next) {
     }
   });
 });
+router.get('/sumproduct', function (req, res, next) {
+  Product.getsumproduct(function (err, rows) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(rows[0]);
+    }
+  });
+});
 module.exports = router;

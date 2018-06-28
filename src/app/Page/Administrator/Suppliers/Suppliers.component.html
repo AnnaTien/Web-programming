@@ -1,3 +1,4 @@
+<p class="h4">Danh sách công ty sản xuất</p>
 <kendo-grid [data]="listcompany" (edit)="editHandler($event)" (cancel)="cancelHandler($event)" (save)="saveHandler($event)"
   (remove)="removeHandler($event)" (add)="addHandler($event)" [height]="329" [pageSize]="gridState.take" [skip]="gridState.skip"
   [sort]="gridState.sort" [pageable]="true" [sortable]="true" [navigable]="true" *ngIf="listcompany">

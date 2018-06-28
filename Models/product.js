@@ -32,6 +32,9 @@ var product = {
   },
   updateproduct: function (product_id, product, callback) {
     return db.query("update product set product_name=?,catalog_id=?,company_id=?,product_price=?,product_discount=?,product_madein=? where product_id=?", [product.product_name, product.catalog_id, product.company_id, product.product_price, product.product_discount, product.product_madein, product_id], callback);
-  }
+  },
+  getsumproduct: function (callback) {
+    return db.query("select SUM(product_qty)as total from product ", callback);
+  },
 };
 module.exports = product;

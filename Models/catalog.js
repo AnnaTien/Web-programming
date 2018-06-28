@@ -15,6 +15,9 @@ var Catalog = {
   },
   updatecatalog: function (catalog_id, catalog, callback) {
     return db.query("update catalog set catalog_name=? where catalog_id=?", [catalog.catalog_name, catalog_id], callback);
-  }
+  },
+  getsumcatalog: function (callback) {
+    return db.query("select count(*)as total from catalog ", callback);
+  },
 };
 module.exports = Catalog;

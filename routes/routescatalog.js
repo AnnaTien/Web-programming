@@ -50,4 +50,13 @@ router.put('/updatecatalog/:catalog_id', function (req, res, next) {
     }
   });
 });
+router.get('/catalogsum', function (req, res, next) {  
+  Catolog.getsumcatalog(function (err, rows) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(rows[0]);
+    }
+  });
+});
 module.exports = router;

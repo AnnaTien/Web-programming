@@ -116,7 +116,7 @@
             <span class="clearfix d-none d-sm-inline-block">About us</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="(islogin && Userinfor && Userinfor.Role==1)">
           <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/admin']">
             <i class="fa fa-users"></i>
             <span class="clearfix d-none d-sm-inline-block">Admin</span>
@@ -129,22 +129,37 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!islogin">
           <a class="nav-link waves-light" (click)="Loginform.show()" mdbRippleRadius>
             <i class="fa fa-sign-in"></i>
-            <span class="clearfix d-none d-sm-inline-block">Log In</span>
+            <span class="clearfix d-none d-sm-inline-block">LogIn</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/registration']">
+        <li class="nav-item" *ngIf="islogin && Userinfor">
+          <a class="nav-link waves-light" (click)="LogOut()" mdbRippleRadius>
+            <span>{{Userinfor.username}}&nbsp;|</span>
+            <i class="fa fa-cog"></i>
+            <span class="clearfix d-none d-sm-inline-block">LogOut</span>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="(islogin && Userinfor&& Userinfor.Role==0)">
+          <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/setting']">
+            <i class="fa fa-sign-in"></i>
+            <span class="clearfix d-none d-sm-inline-block">Setting</span>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!islogin">
+          <a class="nav-link waves-light" mdbRippleRadius (click)="registered.show()">
             <i class="fa fa-registered"></i>
-            <span class="clearfix d-none d-sm-inline-block">registered</span>
+            <span class="clearfix d-none d-sm-inline-block">Registered</span>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link waves-light" mdbRippleRadius [routerLink]="['/cart']">
             <i class="fa fa-shopping-cart"></i>
-            <span class="clearfix d-none d-sm-inline-block">Giỏ hàng<span>({{qty}}sp)</span></span>
+            <span class="clearfix d-none d-sm-inline-block">Giỏ hàng
+              <span>({{qty}}sp)</span>
+            </span>
           </a>
         </li>
       </ul>
@@ -234,23 +249,25 @@
       </div>
       <!--Body-->
       <div class="modal-body">
-        <div class="md-form form-sm">
-          <i class="fa fa-envelope prefix"></i>
-          <input mdbActive type="text" id="form30" class="form-control">
-          <label for="form30">Your email</label>
-        </div>
+        <form [formGroup]="loginForm" (ngSubmit)="submitlogin(loginForm.value)" novalidate>
+          <div class="md-form form-sm">
+            <i class="fa fa-envelope prefix"></i>
+            <input mdbActive type="text" id="form30" class="form-control" formControlName="email" [control]="loginForm.controls.email">
+            <label for="form30">Your email</label>
+          </div>
 
-        <div class="md-form form-sm">
-          <i class="fa fa-lock prefix"></i>
-          <input mdbActive type="password" id="form31" class="form-control">
-          <label for="form31">Your password</label>
-        </div>
+          <div class="md-form form-sm">
+            <i class="fa fa-lock prefix"></i>
+            <input mdbActive type="password" id="form31" class="form-control" formControlName="password" [control]="loginForm.controls.password">
+            <label for="form31">Your password</label>
+          </div>
 
-        <div class="text-center mt-2">
-          <button class="btn btn-info waves-light" mdbRippleRadius>Log in
-            <i class="fa fa-sign-in ml-1"></i>
-          </button>
-        </div>
+          <div class="text-center mt-2">
+            <button type="submit" class="btn btn-info waves-light" mdbRippleRadius>Log in
+              <i class="fa fa-sign-in ml-1"></i>
+            </button>
+          </div>
+        </form>
 
       </div>
       <!--Footer-->
@@ -262,3 +279,61 @@
   </div>
 </div>
 <!--Modal: Login Form-->
+<div mdbModal #registered="mdb-modal" class="modal fade" id="modalregistered" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Header-->
+      <div class="modal-header light-blue darken-3 white-text">
+        <h4 class="title">
+          <i class="fa fa-user-plus"></i> Registered</h4>
+        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="registered.hide()">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <!--Body-->
+      <div class="modal-body mb-0">
+        <form [formGroup]="registerForm" (ngSubmit)="submitregister(registerForm.value)">
+          <div class="md-form form-sm">
+            <i class="fa fa-envelope prefix"></i>
+            <input mdbActive type="text" id="form40" class="form-control" formControlName="name" [control]="registerForm.controls.name">
+            <label for="form40">Your name</label>
+          </div>
+          <div class="md-form form-sm">
+            <i class="fa fa-envelope prefix"></i>
+            <input mdbActive type="text" id="form44" class="form-control" formControlName="username" [control]="registerForm.controls.username">
+            <label for="form44">Username</label>
+          </div>
+          <div class="md-form form-sm">
+            <i class="fa fa-lock prefix"></i>
+            <input mdbActive type="email" id="form41" class="form-control" formControlName="email" [control]="registerForm.controls.email">
+            <label for="form41">Your email</label>
+          </div>
+          <div class="md-form form-sm">
+            <i class="fa fa-lock prefix"></i>
+            <input mdbActive type="password" id="form42" class="form-control" formControlName="password" [control]="registerForm.controls.password">
+            <label for="form42">Your password</label>
+          </div>
+          <div class="md-form form-sm">
+            <i class="fa fa-phone prefix"></i>
+            <input mdbActive type="tel" id="form43" class="form-control" formControlName="phone" [control]="registerForm.controls.phone">
+            <label for="form43">Your phone</label>
+          </div>
+
+          <div class="text-center mt-1-half">
+            <button type="submit" class="btn btn-info waves-effect waves-light">Sign up
+              <i class="fa fa-sign-in ml-1"></i>
+            </button>
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="registered.hide()" mdbRippleRadius>Close</button>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>

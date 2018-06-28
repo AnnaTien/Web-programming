@@ -1,1 +1,7 @@
-<p>bills</p>
+<p class="h4">Danh sách đơn hàng</p>
+<kendo-grid [data]="listtransacsion">
+  <kendo-grid-column field="transaction_id" title="Code"></kendo-grid-column>
+  <kendo-grid-column field="created" title="created"></kendo-grid-column>
+  <kendo-grid-column field="amount" title="amount"></kendo-grid-column>
+  <kendo-grid-column field="status" title="status"></kendo-grid-column>
+</kendo-grid>

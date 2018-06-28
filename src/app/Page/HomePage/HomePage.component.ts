@@ -18,9 +18,9 @@ export class HomePageComponent implements OnInit {
     _newest: any = null;
     _buyest: any = null;
     _viewest: any = null;
-    phones: any = [];
-
+    phones: any = [];   
     constructor(private routing: Router, private http: HttpClient, private location: Location) {
+
     }
     @ViewChild('carousel1') carousel1: CarouselComponent;
     @ViewChild('carousel2') carousel2: CarouselComponent;
@@ -29,8 +29,8 @@ export class HomePageComponent implements OnInit {
     public doctors2: any = [];
     public doctors3: any = [];
     listorders: any = null;
-    ngOnInit() {
-        this.carousel1.interval = 0;
+    ngOnInit() {     
+          this.carousel1.interval = 0;
         this.carousel2.interval = 0;
         this.carousel3.interval = 0;
 
@@ -112,13 +112,6 @@ export class HomePageComponent implements OnInit {
                 }
                 console.log("doctors3", this.doctors3);
             }
-        });
-        var login = {
-            email: 'nguyenngoclinhtien1001@gmail.com',
-            password: '123456',
-        }
-        this.http.post("http://127.0.0.1:3000/api/login", login).subscribe(data => {
-            console.log("datalogin", data);
         });
         this.http.get("http://127.0.0.1:3000/api/ordersall").subscribe(data => {
             if (data) {

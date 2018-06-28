@@ -15,6 +15,9 @@ var Company = {
   },
   updatecompany: function (company_id, company, callback) {
     return db.query("update company set company_name=? where company_id=?", [company.company_name, company_id], callback);
-  }
+  },
+  getsumcompany: function (callback) {
+    return db.query("select count(*)as total from company ", callback);
+  },
 };
 module.exports = Company;

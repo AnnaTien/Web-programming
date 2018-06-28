@@ -7,13 +7,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule } from "@angular/http";
 import { HttpClient } from "@angular/common/http";
 import { HttpClientModule } from "@angular/common/http";
-import { MDBBootstrapModule } from './typescripts/free/index';
+import { MDBBootstrapModule, ModalModule } from './typescripts/free/index';
 import { MDBBootstrapModulePro } from './typescripts/pro/index';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './modules/Header/Header.component';
 import { FooterComponent } from './modules/Footer/Footer.component';
 import { HomeworkComponent } from './Page/Homework/Homework.component';
-import { RegistrationComponent } from './Page/Registration/Registration.component';
 import { TeammemberComponent } from './Page/Teammember/Teammember.component';
 import { HomePageComponent } from './page/HomePage/HomePage.component';
 import { DetailphoneComponent } from './Page/Detailphone/Detailphone.component';
@@ -30,14 +29,14 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
 import { DropDownListModule } from '@progress/kendo-angular-dropdowns';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { CartComponent } from './Page/Cart/Cart.component';
+import { SettingComponent } from './Page/Setting/Setting.component';
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
         FooterComponent,
         HomeworkComponent,
-        HomePageComponent,
-        RegistrationComponent,
+        HomePageComponent,      
         TeammemberComponent,
         DetailphoneComponent,
         ShowphoneComponent,
@@ -48,6 +47,7 @@ import { CartComponent } from './Page/Cart/Cart.component';
         BillsComponent,
         AcessDeniedComponent,
         CartComponent,
+        SettingComponent
     ],
     imports: [
         BrowserModule,
@@ -64,7 +64,8 @@ import { CartComponent } from './Page/Cart/Cart.component';
         DropDownListModule,
         PopupModule,
         InputsModule,
-        DropDownsModule
+        DropDownsModule,
+        ModalModule.forRoot()
     ],
 
     bootstrap: [AppComponent],
