@@ -37,6 +37,10 @@
               <div *ngIf="company">{{company.company_name}}</div>
             </li>
           </ul>
+          <div>
+            <button type="button" class="btn btn-large btn-block btn-success btn-checkout" (click)="addcart(detailproduct)">Thêm vào giỏ hàng</button>
+
+          </div>
         </div>
       </div>
     </div>
@@ -77,7 +81,8 @@
               <span class="sale-tag sale-tag-square">-{{newest.product_discount}}%</span>
             </p>
           </div>
-          <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect>
+          <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect (click)="addcart(newest)"
+            role="button">
             <i class="fa fa-shopping-cart pl-1 waves-light" mdbWavesEffect></i>
           </a>
           <div class="card-footer ">
@@ -134,7 +139,8 @@
               <span class="sale-tag sale-tag-square">-{{newest.product_discount}}%</span>
             </p>
           </div>
-          <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect>
+          <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3 waves-light" mdbWavesEffect (click)="addcart(newest)"
+            role="button">
             <i class="fa fa-shopping-cart pl-1 waves-light" mdbWavesEffect></i>
           </a>
           <div class="card-footer ">

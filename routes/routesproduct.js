@@ -58,9 +58,8 @@ router.get('/productcatalog/:catalogid', function (req, res, next) {
     }
   });
 });
-router.get('/productcompany/:companyid', function (req, res, next) {
-  var companyid = req.params.companyid
-  Product.getproductcompany(companyid, function (err, rows, fields) {
+router.get('/productcompany/:company_id', function (req, res, next) {
+  Product.getproductcompany(req.params.company_id, function (err, rows, fields) {
     if (err) {
       res.json(err);
     } else {

@@ -6,6 +6,8 @@ var routesproduct = require('./routes/routesproduct');
 var routescatalog = require('./routes/routescatalog');
 var routescompany = require('./routes/routescompany');
 var routesuser = require('./routes/routesuser');
+var routesorders = require('./routes/routesorders');
+
 
 
 var app = express();
@@ -20,6 +22,7 @@ app.use('/api', routesproduct);
 app.use('/api', routescatalog);
 app.use('/api', routescompany);
 app.use('/api', routesuser);
+app.use('/api', routesorders);
 
 
 var server = app.listen(3000, "127.0.0.1", function () {

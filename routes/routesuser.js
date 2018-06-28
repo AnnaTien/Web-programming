@@ -11,6 +11,7 @@ router.post('/login', function (req, res, next) {
   User.Login(email, pass, function (err, rows, fields) {
     if (rows.length != 0) {
       data["Data"] = 0;
+      data["account"] = rows[0];
       res.json(data);
     } else {
       data["Data"] = -1;

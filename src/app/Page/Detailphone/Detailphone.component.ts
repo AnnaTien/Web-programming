@@ -46,6 +46,78 @@ export class DetailphoneComponent {
             }
         });
     }
+    listorders: any = null;
+    ngOnInit() {
+        this.listorders = null;
+        this.http.get("http://127.0.0.1:3000/api/ordersall").subscribe(data => {
+            if (data) {
+                this.listorders = data;
+            }
+        })
+    }
+    addcart(newest) {
+        if (newest) {
+            if (this.listorders && this.listorders.length > 0) {
+                let temp = this.listorders.filter(a => a.product_id === newest.product_id);
+                if (temp && temp.length > 0) {
+                    temp[0].orders_qty = temp[0].orders_qty + 1;
+                    temp[0].orders_amount = temp[0].orders_amount + newest.product_price;
+                    this.http.put("http://127.0.0.1:3000/api/updateorders/" + temp[0].orders_id, temp[0]).subscribe(data => {
+                        if (data) {
+                            this.http.get("http://127.0.0.1:3000/api/ordersall").subscribe(data => {
+                                if (data) {
+                                    this.listorders = data;
+                                    console.log("listorders", this.listorders)
+                                    window.location.reload();
+                                }
+                            })
+                        }
+                    })
+                }
+                else {
+                    var temps = {
+                        product_id: newest.product_id,
+                        orders_qty: 1,
+                        orders_amount: newest.product_price,
+                        orders_status: 0,
+                        transaction_id: null,
+                    }
+                    this.http.post("http://127.0.0.1:3000/api/addorders", temps).subscribe(data => {
+                        if (data) {
+                            this.http.get("http://127.0.0.1:3000/api/ordersall").subscribe(data => {
+                                if (data) {
+                                    this.listorders = data;
+                                    console.log("listorders add", this.listorders)
+                                    window.location.reload();
+                                }
+                            })
+                        }
+                    })
+                }
+            }
+            else {
+                var temps = {
+                    product_id: newest.product_id,
+                    orders_qty: 1,
+                    orders_amount: newest.product_price,
+                    orders_status: 0,
+                    transaction_id: null,
+                }
+                this.http.post("http://127.0.0.1:3000/api/addorders", temps).subscribe(data => {
+                    if (data) {
+                        this.http.get("http://127.0.0.1:3000/api/ordersall").subscribe(data => {
+                            if (data) {
+                                this.listorders = data;
+                                console.log("listorders add", this.listorders)
+                                window.location.reload();
+                            }
+                        })
+                    }
+                })
+            }
+        }
+
+    }
     ngOnDestroy() {
         this.sub.unsubscribe();
     }

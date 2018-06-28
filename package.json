@@ -61,6 +61,7 @@
     "del": "3.0.x",
     "easy-pie-chart": "2.1.x",
     "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "font-awesome": "4.7.x",
     "gulp": "^3.9.1",
     "gulp-rename": "1.2.x",

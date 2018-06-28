@@ -21,8 +21,8 @@ var product = {
   getproductcatalog: function (catalogid, callback) {
     return db.query("select * from product where catalog_id=?", [catalogid], callback);
   },
-  getproductproduct: function (productid, callback) {
-    return db.query("select * from product where product_id=?", [productid], callback);
+  getproductcompany: function (company_id, callback) {
+    return db.query("select * from product where company_id=?", [company_id], callback);
   },
   addproduct: function (product, callback) {
     return db.query("Insert into product(product_name,catalog_id,company_id,product_price,product_discount,product_madein) values(?,?,?,?,?,?)", [product.product_name, product.catalog_id, product.company_id, product.product_price, product.product_discount, product.product_madein], callback);

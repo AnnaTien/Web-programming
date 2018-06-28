@@ -1,37 +1,39 @@
 <div class="comtainer detailproduct">
   <div class="row">
     <div class="col-12">
-      <h4>Giỏ Hàng(0 sản phẩm)</h4>
+      <h4>Giỏ Hàng({{sumqty}} sản phẩm)</h4>
     </div>
-    <div class="col-9">
-      <form id="shopping-cart">
-        <div class="d-flex flex-row">
-          <div style="padding-right: 40px">
-            <img width="100" height="100" src="./assets/img/Iphone/iph001.jpg">
-          </div>
-          <div>
-            <div class="d-flex flex-row" style="width: 100%;">
-              <div class="mr-auto" style="width: 500px;">
-                <p class="h5">Điện thoại di động</p>
-                <button style="width: 100px;" type="button" class="btn btn-sm btn-block btn-danger btn-checkout">Xóa</button>
-              </div>
-              <div>
-                <p class="h6"> Giá: 34.500&nbsp;₫</p>
-                <p>1</p>
+    <div class="col-9" *ngIf="listorders">
+      <div *ngFor="let items of listorders" class="pb-4">
+        <div id="shopping-cart" *ngIf="items&&items.data">
+          <div class="d-flex flex-row">
+            <div style="padding-right: 40px">
+              <img width="100" height="100" src="./assets/img/{{items.data.product_image_link}}">
+            </div>
+            <div>
+              <div class="d-flex flex-row" style="width: 100%;">
+                <div class="mr-auto" style="width: 500px;">
+                  <p class="h5">{{items.data.product_name}}</p>
+                  <button style="width: 100px;" type="button" (click)="deleteorders(items)" class="btn btn-sm btn-block btn-danger btn-checkout">Xóa</button>
+                </div>
+                <div>
+                  <p class="h6"> Giá: {{items.data.product_price}}&nbsp;₫</p>
+                  <p>Số lượng: {{items.orders_qty}}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
-    <div class="col-3">
+    <div class="col-3" *ngIf="listorders">
       <p>
         <span>Tạm tính: </span>
-        <strong>174.000&nbsp;₫</strong>
+        <strong>{{sumamount}}&nbsp;₫</strong>
       </p>
       <p>
         <span>Thành tiền: </span>
-        <strong>174.000&nbsp;₫</strong>
+        <strong>{{sumamount}}&nbsp;₫</strong>
       </p>
       <button type="button" class="btn btn-large btn-block btn-success btn-checkout">Tiến hành đặt hàng</button>
     </div>

@@ -13,8 +13,11 @@ export class HeaderComponent {
 
     }
     iconsSelect: Array<any>;
-
+    listorders: any = null;
+    qty: number = 0;
     ngOnInit() {
+        this.qty = 0;
+        this.listorders = null;
         this.http.get("http://127.0.0.1:3000/api/catalogall").subscribe(data => {
             if (data) {
                 this.lcatalog = data;
@@ -28,7 +31,20 @@ export class HeaderComponent {
                 console.log("lcompany", this.lcompany);
             }
         });
+        this.http.get("http://127.0.0.1:3000/api/ordersall").subscribe(data => {
+            if (data) {
+                this.listorders = data;
+                for (let item of this.listorders) {
+                    if (item) {
+                        this.qty = this.qty + item.orders_qty;
+                    }
+
+                }
+                console.log("datas", this.listorders);
+            }
+        })
     }
+
     facebook() {
         var urlPre = 'https://vi-vn.facebook.com';
         var windowChild = window.open(urlPre, "windowChild");
