@@ -37,6 +37,8 @@ export class AdministratorComponent implements OnInit {
     sumcatalog: number = 0;
     osumcompany = null;;
     sumcopany: number = 0;
+    osumtransaction = null;;
+    sumtransaction: number = 0;
     ngOnInit() {
 
         this.http.get("http://127.0.0.1:3000/api/sumproduct").subscribe(data => {
@@ -56,6 +58,12 @@ export class AdministratorComponent implements OnInit {
             if (data) {
                 this.osumcatalog = data;
                 this.sumcatalog = this.osumcatalog.total;
+            }
+        });
+        this.http.get("http://127.0.0.1:3000/api/sumtransaction").subscribe(data => {
+            if (data) {
+                this.osumtransaction = data;
+                this.sumtransaction = this.osumtransaction.total;
             }
         });
     }

@@ -96,7 +96,9 @@ export class HeaderComponent {
                     window.location.href = "http://localhost:4200/#/admin"
                 }
                 else {
-                    window.location.href = "http://localhost:4200/#/setting";
+                    if (window.location.hash != "#/cart") {
+                        window.location.href = "http://localhost:4200/#/setting";
+                    }
                 }
                 window.location.reload();
             }
@@ -130,9 +132,7 @@ export class HeaderComponent {
             window.location.href = "http://localhost:4200/#/homepage";
         }
         console.log(this.location);
-
-        // window.location.reload();
-
+        window.location.reload();
     }
     facebook() {
         var urlPre = 'https://vi-vn.facebook.com';

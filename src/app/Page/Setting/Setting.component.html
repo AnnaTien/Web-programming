@@ -33,7 +33,11 @@
     <p class="h4 pb-3">Thông tin giao dịch</p>
     <kendo-grid [data]="listtransacsion">
       <kendo-grid-column field="transaction_id" title="Code"></kendo-grid-column>
-      <kendo-grid-column field="created" title="created"></kendo-grid-column>
+      <kendo-grid-column field="created" title="created">
+        <ng-template kendoGridEditTemplate let-dataItem="dataItem">
+          {{ dataItem.created|date: 'dd/MM/yyyy'}}
+        </ng-template>
+      </kendo-grid-column>
       <kendo-grid-column field="amount" title="amount"></kendo-grid-column>
       <kendo-grid-column field="status" title="status"></kendo-grid-column>
     </kendo-grid>

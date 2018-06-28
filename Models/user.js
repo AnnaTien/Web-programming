@@ -8,10 +8,16 @@ var User = {
     return db.query("Insert into user(username,password,email,phone,name,Role,created) values(?,?,?,?,?,?,?)", [register.username, register.password, register.email, register.phone, register.name, 0, date], callback);
   },
   changeInfor: function (user_id, register, callback) {
-    return db.query("update user set username=?,email=?,phone=?,name=? where user_id=?", [register.username, register.email, register.phone, register.name,user_id], callback);
+    return db.query("update user set username=?,email=?,phone=?,name=? where user_id=?", [register.username, register.email, register.phone, register.name, user_id], callback);
   },
   getuserById: function (user_id, callback) {
     return db.query("select * from user where usert_id=?", [user_id], callback);
+  },
+  getsumorderqty: function (callback) {
+    return db.query("select SUM(orders_qty)as totalqty from orders", callback);
+  },
+  getsumamount: function (callback) {
+    return db.query("select SUM(orders_amount)as totalamount from orders", callback);
   },
 };
 module.exports = User;

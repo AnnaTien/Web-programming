@@ -49,4 +49,22 @@ router.get('/userbyid/:user_id', function (req, res, next) {
     }
   });
 });
+router.get('/sumamount', function (req, res, next) {
+  User.getsumamount(function (err, rows) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(rows[0]);
+    }
+  });
+});
+router.get('/sumorderqty', function (req, res, next) {
+  User.getsumorderqty(function (err, rows) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(rows[0]);
+    }
+  });
+});
 module.exports = router;

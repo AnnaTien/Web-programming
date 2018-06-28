@@ -32,6 +32,11 @@ export class SettingComponent implements OnInit {
     else {
       this.Userinfor = null;
     }
+    this.http.get("http://127.0.0.1:3000/api/transactionall").subscribe(datas => {
+      if (datas) {
+        this.listtransacsion = datas;
+      }
+    });
 
   }
   submitsetting(value) {

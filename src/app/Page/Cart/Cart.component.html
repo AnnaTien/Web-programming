@@ -1,4 +1,4 @@
-<div class="comtainer detailproduct">
+<div class="comtainer detailproduct" *ngIf="iscart">
   <div class="row">
     <div class="col-12">
       <h4>Giỏ Hàng({{sumqty}} sản phẩm)</h4>
@@ -35,7 +35,67 @@
         <span>Thành tiền: </span>
         <strong>{{sumamount}}&nbsp;₫</strong>
       </p>
-      <button type="button" class="btn btn-large btn-block btn-success btn-checkout">Tiến hành đặt hàng</button>
+      <button type="button" class="btn btn-large btn-block btn-success btn-checkout" (click)="buy()">Tiến hành đặt hàng</button>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="!iscart">
+  <div class="col-6" style="padding:20px;border-right:1px #bdbdbd solid ">
+    <form [formGroup]="contactForm" (ngSubmit)="submitcontact(contactForm.value)">
+      <p class="h4 pb-3">
+        Thông tin cá nhân
+      </p>
+      <div class="md-form form-sm">
+        <input mdbActive type="text" id="name1" class="form-control" formControlName="user_name" [control]="contactForm.controls.user_name">
+        <label for="name1">Your name</label>
+      </div>
+      <div class="md-form form-sm">
+        <input mdbActive type="email" id="email1" class="form-control" formControlName="user_email" [control]="contactForm.controls.user_email">
+        <label for="email1">Your email</label>
+      </div>
+      <div class="md-form form-sm">
+        <input mdbActive type="tel" id="phone1" class="form-control" formControlName="user_phone" [control]="contactForm.controls.user_phone">
+        <label for="phone1">Your phone</label>
+      </div>
+      <div class="md-form form-sm">
+          <input mdbActive type="text" id="phone2" class="form-control" formControlName="adress" [control]="contactForm.controls.adress">
+          <label for="phone2">Địa chỉ</label>
+        </div>
+      <div class="text-center mt-1-half">
+        <button type="submit" class="btn btn-info waves-effect waves-light"> Đặt hàng
+          <i class="fa fa-sign-in ml-1"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="col-6" style="padding: 20px;">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex flex-column py-3" style="width: 100%;">
+          <div style="border-bottom: 1px #bdbdbd solid;width: 100%;" class="d-flex flex-row">
+            <div class="mr-auto">Đơn hàng({{sumqty}} sản phẩm)</div>
+            <div class="ml-auto">
+              <button type="button" class="btn btn-block btn-sm btn-default" (click)="edit()">Sửa</button>
+            </div>
+          </div>
+          <div *ngFor="let items of listorders" class="d-flex flex-row py-3" style="width: 100%;border-bottom: 1px #bdbdbd solid">
+            <div class="mr-auto">{{items.data.product_name}}</div>
+            <div class="pr-1">Sl: {{items.orders_qty}}</div>
+            <div class="ml-auto">{{items.orders_amount}}</div>
+          </div>
+          <div class="d-flex flex-row py-3" style="width: 100%; border-bottom: 1px #bdbdbd solid">
+            <div class="mr-auto">Tạm Tính:</div>
+            <div class="ml-auto">{{sumamount}}</div>
+          </div>
+          <div class="d-flex flex-row py-3" style="width: 100%;">
+            <div class="mr-auto">
+              <b>Thành Tiền:</b>
+            </div>
+            <div class="ml-auto" class="h5 red-text">{{sumamount}}</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
