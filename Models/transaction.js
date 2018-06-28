@@ -9,7 +9,7 @@ var Transaction = {
     return db.query("select * from transaction where transaction_id=?", [transaction_id], callback);
   },
   addtransaction: function (transaction, callback) {
-    return db.query("Insert into transaction(status,user_id,user_name,user_email,user_phone,amount,adress,created) values(?,?,?,?,?,?,?,?)", [0, transaction.user_id, transaction.user_name, transaction.user_email, transaction.user_phone, transaction.amount, transaction.adress, date], callback);
+    return db.query("Insert into transaction(status,user_id,user_name,user_email,user_phone,amount,adress,created) values(?,?,?,?,?,?,?,?)", [101, transaction.user_id, transaction.user_name, transaction.user_email, transaction.user_phone, transaction.amount, transaction.adress, date], callback);
   },
   deletetransaction: function (transaction_id, callback) {
     return db.query("delete from transaction where transaction_id=?", [transaction_id], callback);

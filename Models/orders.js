@@ -9,7 +9,7 @@ var Orders = {
     return db.query("select * from orders where orders_id=?", [orders_id], callback);
   },
   addOrders: function (orders, callback) {
-    return db.query("Insert into orders(product_id,orders_qty,orders_amount,orders_status,transaction_id) values(?,?,?,?,?)", [orders.product_id,orders.orders_qty,orders.orders_amount,orders.orders_status,orders.transaction_id], callback);
+    return db.query("Insert into orders(product_id,orders_qty,orders_amount,orders_status,transaction_id) values(?,?,?,?,?)", [orders.product_id,orders.orders_qty,orders.orders_amount,101,orders.transaction_id], callback);
   },
   deleteorders: function (orders_id, callback) {
     return db.query("delete from orders where orders_id=?", [orders_id], callback);
