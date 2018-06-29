@@ -36,5 +36,8 @@ var product = {
   getsumproduct: function (callback) {
     return db.query("select SUM(product_qty)as total from product ", callback);
   },
+  getsearch: function (products, callback) {
+    return db.query("SELECT * FROM product WHERE catalog_id=? and company_id=? and product_name LIKE ?", '%' + products.product_name + '%', [products.catalog_id, products.company_id], callback)
+  },
 };
 module.exports = product;

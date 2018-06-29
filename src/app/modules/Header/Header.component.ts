@@ -112,7 +112,6 @@ export class HeaderComponent {
                 if (this.register.Data === -1) {
                     alert("Đăng kí thất bại");
                 }
-
                 else {
                     this.registered.hide();
                     alert("Đăng kí tài khoản thành công")

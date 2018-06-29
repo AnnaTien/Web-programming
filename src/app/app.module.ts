@@ -22,7 +22,6 @@ import { ProductsComponent } from './Page/Administrator/Products/Products.compon
 import { SuppliersComponent } from './Page/Administrator/Suppliers/Suppliers.component';
 import { CategoriesComponent } from './Page/Administrator/Categories/Categories.component';
 import { BillsComponent } from './Page/Administrator/Bills/Bills.component';
-import { AcessDeniedComponent } from './Page/AcessDenied/AcessDenied.component';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { PopupModule } from '@progress/kendo-angular-popup';
 import { InputsModule } from '@progress/kendo-angular-inputs';
@@ -30,6 +29,7 @@ import { DropDownListModule } from '@progress/kendo-angular-dropdowns';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { CartComponent } from './Page/Cart/Cart.component';
 import { SettingComponent } from './Page/Setting/Setting.component';
+import { SearchComponent } from './Page/Search/Search.component';
 @NgModule({
     declarations: [
         AppComponent,
@@ -45,7 +45,7 @@ import { SettingComponent } from './Page/Setting/Setting.component';
         SuppliersComponent,
         CategoriesComponent,
         BillsComponent,
-        AcessDeniedComponent,
+        SearchComponent,
         CartComponent,
         SettingComponent
     ],

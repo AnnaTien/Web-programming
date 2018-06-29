@@ -20,12 +20,15 @@ router.post('/login', function (req, res, next) {
   })
 });
 router.post('/register', function (req, res, next) {
+  var data = {
+    "Data": ""
+  };
   User.Register(req.body, function (err, count) {
     if (err) {
       data["Data"] = -1;
       res.json(data);
     } else {
-      data["Data"] = -1;
+      data["Data"] = 0;
       res.json(data);
     }
   });

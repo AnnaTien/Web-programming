@@ -105,4 +105,13 @@ router.get('/sumproduct', function (req, res, next) {
     }
   });
 });
+router.post('/searchproduct', function (req, res, next) {
+  Product.getsearch(req.body, function (err, rows) {
+    if (err) {
+      res.json(err);
+    } else {
+      res.json(rows);
+    }
+  });
+});
 module.exports = router;

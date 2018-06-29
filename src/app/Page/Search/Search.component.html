@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-12">
+    <p class="h4">Tìm kiếm thông tin sản phẩm</p>
+  </div>
+  <div class="col-3">
+    <div class="md-form form-sm">
+      <input mdbActive type="text" id="Productname" class="form-control" [(ngModel)]="productname" (change)="coverage()">
+      <label for="Productname">Tên sản phẩm</label>
+    </div>
+  </div>
+  <div class="col-3">
+    <label class="pr-3 pt-3">Loại sản Phẩm:</label>
+    <kendo-dropdownlist [data]="categories"  [value]="catalog_id" [valuePrimitive]="true" [textField]="'catalog_name'" [valueField]="'catalog_id'">
+    </kendo-dropdownlist>
+  </div>
+  <div class="col-3 pt-3">
+    <label class="pr-3">Nhà sản xuất:</label>
+    <kendo-dropdownlist [data]="listcompany" [value]="company_id" [valuePrimitive]="true" [textField]="'company_name'" [valueField]="'company_id'">
+    </kendo-dropdownlist>
+  </div>
+  <div class="col-3 pt-3">
+    <a class="h6" role="button" (click)="searchproduct()">Tìm kiếm</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <p class="h4">Kết quả tìm kiếm thông tin sản phẩm</p>
+  </div>
+  <div class="col-12">
+    <kendo-grid [data]="listproduct" [height]="429" [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
+      [pageable]="true" *ngIf="listproduct">
+      <kendo-grid-column field="product_image_link" title="Link ảnh" width="100">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <img class="center" width="50" height="50" src="./assets/img/{{dataItem.product_image_link}}" alt="">
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column field="product_name" title="Tên sản phẩm"></kendo-grid-column>
+
+      <kendo-grid-column field="product_price" title="Giá sản phẩm"></kendo-grid-column>
+      <kendo-grid-column field="product_name" title="Tên sản phẩm"></kendo-grid-column>
+      <kendo-grid-column field="product_id" title="Chi tiết sản phẩm" width="200">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <a role="button" [routerLink]="['/detailphone']" [queryParams]="{product_id: dataItem.product_id}">Chi tiết sản phẩm</a>
+        </ng-template>
+      </kendo-grid-column>
+    </kendo-grid>
+  </div>
+</div>
