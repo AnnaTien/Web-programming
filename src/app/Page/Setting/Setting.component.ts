@@ -28,15 +28,19 @@ export class SettingComponent implements OnInit {
       this.settingForm.patchValue({ username: this.Userinfor.username });
       this.settingForm.patchValue({ email: this.Userinfor.email });
       this.settingForm.patchValue({ phone: this.Userinfor.phone });
+      if(this.Userinfor)
+      {
+        this.http.get("http://127.0.0.1:3000/api/transactionbyid/" + this.Userinfor.user_id).subscribe(datas => {
+          if (datas) {
+            this.listtransacsion = datas;
+          }
+        });
+      }
     }
     else {
       this.Userinfor = null;
     }
-    this.http.get("http://127.0.0.1:3000/api/transactionall").subscribe(datas => {
-      if (datas) {
-        this.listtransacsion = datas;
-      }
-    });
+   
 
   }
   submitsetting(value) {

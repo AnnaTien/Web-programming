@@ -8,6 +8,7 @@ var routescompany = require('./routes/routescompany');
 var routesuser = require('./routes/routesuser');
 var routesorders = require('./routes/routesorders');
 var routestransaction = require('./routes/routestransaction');
+var routesstatus = require('./routes/routesstatus');
 var app = express();
 var cors = require('cors');
 app.use(bodyparser.urlencoded({
@@ -22,6 +23,7 @@ app.use('/api', routescompany);
 app.use('/api', routesuser);
 app.use('/api', routesorders);
 app.use('/api', routestransaction);
+app.use('/api', routesstatus);
 
 
 var server = app.listen(3000, "127.0.0.1", function () {

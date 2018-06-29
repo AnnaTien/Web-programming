@@ -11,12 +11,12 @@ router.get('/transactionall', function (req, res, next) {
     }
   });
 });
-router.get('/transactionbyid/:transaction_id', function (req, res, next) {
-  Transaction.gettransactionById(req.params.transaction_id, function (err, rows) {
+router.get('/transactionbyid/:user_id', function (req, res, next) {
+  Transaction.gettransactionById(req.params.user_id, function (err, rows) {
     if (err) {
       res.json(err);
     } else {
-      res.json(rows[0]);
+      res.json(rows);
     }
   });
 });

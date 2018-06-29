@@ -50,7 +50,7 @@ export class ProductsComponent {
   public gridState: State = {
     sort: [],
     skip: 0,
-    take: 10
+    take: 5
   };
   public category(id: number): any {
     return this.categories.find(x => x.catalog_id === id);

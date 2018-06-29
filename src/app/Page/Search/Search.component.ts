@@ -18,18 +18,9 @@ export class SearchComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.productname = String(this.productname);
-    if (this.productname) {
-      this.http.post("http://127.0.0.1:3000/api/searchproduct", { product_name: this.productname, catalog_id: this.catalog_id, company_id: this.company_id }).subscribe(data => {
-        this.listproduct = data;
-      });
-    }
-    else {
-      this.http.get("http://127.0.0.1:3000/api/productall").subscribe(data => {
-        this.listproduct = data;
-      });
-    }
-
+    this.http.get("http://127.0.0.1:3000/api/productall").subscribe(data => {
+      this.listproduct = data;
+    });
     this.http.get("http://127.0.0.1:3000/api/catalogall").subscribe(data => {
       this.categories = data;
       console.log("catalogall", this.categories);

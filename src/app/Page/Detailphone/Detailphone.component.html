@@ -39,7 +39,6 @@
           </ul>
           <div>
             <button type="button" class="btn btn-large btn-block btn-success btn-checkout" (click)="addcart(detailproduct)">Thêm vào giỏ hàng</button>
-
           </div>
         </div>
       </div>
@@ -49,7 +48,7 @@
         <h4>Sản phẩm cùng loại</h4>
       </div>
       <div class="col-3 py-3" *ngFor="let newest of sametype let i=index">
-        <div class="card pt-3">
+        <div class="card pt-3" *ngIf="i<5">
           <div class="view overlay waves-light center" mdbWavesEffect>
             <a [routerLink]="['/detailphone']" [queryParams]="{product_id: newest.product_id}">
               <img class="center" width="180" height="180" src="./assets/img/{{newest.product_image_link}}" alt="">
@@ -107,7 +106,7 @@
         <h4>Sản phẩm cùng nhà sản xuất</h4>
       </div>
       <div class="col-3 py-3" *ngFor="let newest of samecompany let i=index">
-        <div class="card pt-3">
+        <div class="card pt-3" *ngIf="i<5">
           <div class="view overlay waves-light center" mdbWavesEffect>
             <a [routerLink]="['/detailphone']" [queryParams]="{product_id: newest.product_id}">
               <img class="center" width="180" height="180" src="./assets/img/{{newest.product_image_link}}" alt="">

@@ -31,7 +31,7 @@
   </div>
   <div class="col-9" style="padding:0px 20px 0px 20px;">
     <p class="h4 pb-3">Thông tin giao dịch</p>
-    <kendo-grid [data]="listtransacsion">
+    <kendo-grid [data]="listtransacsion" *ngIf="listtransacsion">
       <kendo-grid-column field="transaction_id" title="Code"></kendo-grid-column>
       <kendo-grid-column field="created" title="created">
         <ng-template kendoGridEditTemplate let-dataItem="dataItem">

@@ -1,14 +1,6 @@
 <p class="h4">Danh sách Giao dịch</p>
-<kendo-grid [data]="listtransacsion" (edit)="editHandler($event)" (cancel)="cancelHandler($event)" (save)="saveHandler($event)"
-  (add)="addHandler($event)" [height]="329" [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort" [pageable]="true"
-  [sortable]="true" [navigable]="true " [scrollable]="'virtual'" *ngIf="listtransacsion">
-  <!-- <kendo-grid-column field="catalog_id" title="Category" width="150">
-    <ng-template kendoGridEditTemplate let-dataItem="dataItem" let-column="column" let-formGroup="formGroup">
-      <kendo-dropdownlist [data]="categories" [value]="dataItem.catalog_id" [valuePrimitive]="true" [textField]="'catalog_name'"
-        [valueField]="'catalog_id'">
-      </kendo-dropdownlist>
-    </ng-template>
-  </kendo-grid-column> -->
+<kendo-grid [data]="listtransacsion" [height]="329" [pageSize]="gridState.take" [skip]="gridState.skip" [sort]="gridState.sort"
+  [pageable]="true" [sortable]="true" [navigable]="true " [scrollable]="'virtual'" *ngIf="listtransacsion">
   <kendo-grid-column field="amount" title="Price" format="{0:n}" width="100" disabled>
   </kendo-grid-column>
   <kendo-grid-column field="created" title="Ngày Tạo" width="180" disabled>
@@ -19,11 +11,24 @@
   </kendo-grid-column>
   <kendo-grid-column field="adress" title="adress" disabled>
   </kendo-grid-column>
-  <kendo-grid-command-column title="command" width="175">
-    <ng-template kendoGridCellTemplate let-isNew="isNew">
-      <button kendoGridEditCommand [primary]="true">Edit</button>
-      <button kendoGridSaveCommand [disabled]="formGroup?.invalid">{{ isNew ? 'Add' : 'Update' }}</button>
-      <button kendoGridCancelCommand>{{ isNew ? 'Discard changes' : 'Cancel' }}</button>
+  <kendo-grid-column field="status" title="status" disabled>
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <div *ngIf="dataItem.status==102">
+        <label class="red-text">Đã Thanh Toán</label>
+      </div>
+      <div *ngIf="dataItem.status==103">
+        <label class="red-muted">Hủy Thanh toán</label>
+      </div>
+      <div *ngIf="dataItem.status==101">
+        <kendo-dropdownlist [data]="liststatus" [value]="dataItem.status" [valuePrimitive]="true" [textField]="'status_Name'" [valueField]="'status_id'"
+          (valueChange)="handleCategoryChange($event)">
+        </kendo-dropdownlist>
+      </div>
     </ng-template>
-  </kendo-grid-command-column>
+  </kendo-grid-column>
+  <kendo-grid-column field="status" title="status" disabled>
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <button class="btn btn-sm btn-block  btn-danger" type="button" (click)="Update(dataItem)">Update</button>
+    </ng-template>
+  </kendo-grid-column>
 </kendo-grid>
